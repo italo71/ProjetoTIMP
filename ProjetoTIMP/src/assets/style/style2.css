@@ -38,7 +38,7 @@ text-transform: uppercase;
 color:#F0F0F0;}
 .social-container .col {
 border: 1px solid #F0F0F0;}
-.nav-list li a:before { content: url(../img/anoise-icon.png);
+.nav-list li a:before { content: url(../assets/img/anoise-icon.png);
 font: 400 21px/1 "Material Design Icons";
 display: inline-block;
 vertical-align: baseline;
@@ -66,6 +66,7 @@ background-color: #FF9B00;
 margin-bottom: 8%; 
 margin-top: 1%;  
 color: #F0F0F0;}
+
 
 /*calendario*/
 .wrapper {
