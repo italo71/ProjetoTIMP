@@ -15,6 +15,8 @@ import { ExerciciosComponent } from './pages/exercicios/exercicios.component';
 import { PessoaComponent } from './pages/pessoa/pessoa.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { IndexComponent } from './pages/index/index.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     ExerciciosComponent,
     PessoaComponent,
     PrincipalComponent,
-    SideBarComponent
+    SideBarComponent,
+    IndexComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,
