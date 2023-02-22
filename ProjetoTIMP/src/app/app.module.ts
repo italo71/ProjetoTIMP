@@ -32,9 +32,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
     ExerciciosComponent,
     PessoaComponent,
     PrincipalComponent,
-    SideBarComponent,
-    IndexComponent,
-    SobreComponent
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

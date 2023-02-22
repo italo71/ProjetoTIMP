@@ -363,7 +363,7 @@ body{
     .social-container .col {
     border: 1px solid #F0F0F0;}
     .nav-list li a:before {
-    content: url(../../../img/anoise-icon.png);
+    content: url(../../../assets/img/anoise-icon.png);
     font: 400 21px/1 "Material Design Icons";
     display: inline-block;
     vertical-align: baseline;

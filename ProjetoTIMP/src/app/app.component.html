@@ -1,14 +1,14 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../assets/img/Rotineira.png" class="logo"></a>
+            <a class="navbar-brand" routerLink="/home"><img src="../assets/img/Rotineira.png" class="logo"></a>
             <nav class="navbar2 navbar-dark">
                 <form class="container-fluid justify-content-start">
                     <button class="btn btn-sm btn-outline-secondary botaoEntrada" type="button">
-                        <a class="nav-link" href="./pages/login/login.component.html">Registrar-se</a>
+                        <a class="nav-link" href="/">Registrar-se</a>
                     </button>
                     <button class="btn btn-sm btn-outline-secondary botaoEntrada" type="button">
-                        <a class="nav-link" href="./pages/login/login.component.html">Login</a>
+                        <a class="nav-link" href="/">Login</a>
                     </button>
                 </form>
             </nav>
@@ -16,7 +16,7 @@
     </nav>
 </header>
 
-<app-index></app-index>
+<router-outlet></router-outlet>
 
 
 <footer class="section footer-classic context-dark bg-image" style="background: #25274D;">
@@ -51,7 +51,7 @@
             <div class="col-md-4 col-xl-3" style="margin-top:23px ;">
                 <h4>Links</h4>
                 <ul class="nav-list">
-                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
                     <li><a href="sobre.html">Projetos</a></li>
                     <li><a href="sobre.html">Contato</a></li>
                 </ul>
@@ -78,4 +78,3 @@
         </div>
     </div>
 </footer>
-<router-outlet></router-outlet>
