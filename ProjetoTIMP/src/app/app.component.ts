@@ -10,4 +10,7 @@ export class AppComponent {
   constructor(
     private router: Router
   ){}
+  routerSobre(){
+    this.router.navigate(['/sobre']);
+  }
 }
