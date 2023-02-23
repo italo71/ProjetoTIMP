@@ -14,6 +14,19 @@ export class IndexComponent {
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private session:SessionServiceService,
+    private session: SessionServiceService,
   ) { }
+  sessionON() {
+    let i = this.session.getUserSession()
+    console.log(i)
+    if (i.idUser == -1)
+      return '/login'
+    return '/account'
+  }
+
+  teste(){
+    let t = new SessionData()
+    this.session.setUserSession(t)
+    console.log(this.session.getUserSession())
+  }
 }

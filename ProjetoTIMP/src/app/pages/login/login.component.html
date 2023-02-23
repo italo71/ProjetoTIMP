@@ -1,1 +1,80 @@
-<p>login works!</p>
+<div class="body">
+    <h3 class="text-center text-white pt-5">Bem vindo a PRSystems, seu Gestor de Rotinas!</h3><br><br>
+    <div class="container-fluid">
+        <div id="login-row" class="row d-flex justify-content-center align-items-center">
+            <div id="login-column" class="col-5">
+                <div id="login-box" class="col-12">
+                    <form id="login-form" class="form" method="post">
+                        <div class="form-group" style="padding: 15px;" style="background-color: #25274d; box-shadow: none;">
+                            <div class="col-12 justify-content-center">
+                                <h2 class="text-center text-info" style="color:#ff9b00;">Realize seu Login</h2><br>
+                                <div class="col-12">
+                                    <label for="username" class="text-info">Usuário</label><br>
+                                    <input type="text" name="username" id="username" class="form-control">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="password" class="text-info">Senha</label><br>
+                                    <input type="text" name="password" id="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-info" style="margin-right: 15px;">Entrar</button>
+                                <button type="button" class="btn btn-info">Novo usuario</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">
+                        <font color="25274d">CADASTRO DE USUARIO</font>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" method="post">
+                            <h3 class="text-center text-info">Novo usuário</h3>
+                            <div class="form-group">
+                                <label for="login" class="text-info">Usuário</label><br>
+                                <input type="text" name="txt_login" id="txt_login" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="nome" class="text-info">Nome completo</label><br>
+                                <input type="text" name="txt_nome" id="txt_nome" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-info">email</label><br>
+                                <input type="text" name="txt_email" id="txt_email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <br><label for="senha" class="text-info">Senha</label><br>
+                                <input type="password" name="txt_senha" id="txt_senha" class="form-control">
+                            </div>
+                            <div dataNasc class="form-group">
+                                <label for="senha2" class="text-info">Confirmação de Senha</label><br>
+                                <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btn_salvar" class="btn btn-info">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
