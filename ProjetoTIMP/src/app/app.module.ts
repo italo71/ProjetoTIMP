@@ -29,7 +29,9 @@ import { SobreComponent } from './pages/sobre/sobre.component';
     EstudosComponent,
     ExerciciosComponent,
     PessoaComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    IndexComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,
