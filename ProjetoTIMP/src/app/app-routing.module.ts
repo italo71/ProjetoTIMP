@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IndexComponent } from './pages/index/index.component';
+import { PessoaComponent } from './pages/pessoa/pessoa.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./pages/index/index.module').then(m => m.IndexModule),
+    component:IndexComponent
   },
   {
     path: 'pessoal',
-    loadChildren: () => import('./pages/pessoa/pessoa.component').then(m => m.PessoaComponent),
+    component:PessoaComponent
   },
   {
     path: 'sobre',
-    loadChildren: () => import('./pages/sobre/sobre.module').then(m => m.SobreModule),
+    component:SobreComponent
   }
 ];
 

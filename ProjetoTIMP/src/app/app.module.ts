@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
@@ -14,7 +13,6 @@ import { EstudosComponent } from './pages/estudos/estudos.component';
 import { ExerciciosComponent } from './pages/exercicios/exercicios.component';
 import { PessoaComponent } from './pages/pessoa/pessoa.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
 import { IndexComponent } from './pages/index/index.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 
@@ -31,8 +29,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
     EstudosComponent,
     ExerciciosComponent,
     PessoaComponent,
-    PrincipalComponent,
-    SideBarComponent
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
