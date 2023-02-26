@@ -4,22 +4,22 @@
         <div id="login-row" class="row d-flex justify-content-center align-items-center">
             <div id="login-column" class="col-5">
                 <div id="login-box" class="col-12">
-                    <form id="login-form" class="form" method="post">
+                    <form [formGroup]="resourceForm">
                         <div class="form-group" style="padding: 15px;" style="background-color: #25274d; box-shadow: none;">
                             <div class="col-12 justify-content-center">
                                 <h2 class="text-center text-info" style="color:#ff9b00;">Realize seu Login</h2><br>
                                 <div class="col-12">
                                     <label for="username" class="text-info">Usuário</label><br>
-                                    <input type="text" name="username" id="username" class="form-control">
+                                    <input type="text" name="username" id="username" class="form-control" formControlName="login">
                                 </div>
 
                                 <div class="col-12">
                                     <label for="password" class="text-info">Senha</label><br>
-                                    <input type="text" name="password" id="password" class="form-control">
+                                    <input type="password" name="password" id="password" class="form-control" formControlName="senha">
                                 </div>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn btn-info" style="margin-right: 15px;">Entrar</button>
+                                <button type="button" class="btn btn-info" style="margin-right: 15px;" (click)="logar()">Entrar</button>
                                 <button type="button" class="btn btn-info">Novo usuario</button>
                             </div>
                         </div>
@@ -28,7 +28,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
@@ -45,27 +44,27 @@
                 </div>
                 <div class="modal-body">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" method="post">
+                        <form id="login-form" class="form" [formGroup]="resourceFormCadastro">
                             <h3 class="text-center text-info">Novo usuário</h3>
                             <div class="form-group">
                                 <label for="login" class="text-info">Usuário</label><br>
-                                <input type="text" name="txt_login" id="txt_login" class="form-control">
+                                <input type="text" name="txt_login" id="txt_login" class="form-control" formControlName="login">
                             </div>
                             <div class="form-group">
                                 <label for="nome" class="text-info">Nome completo</label><br>
-                                <input type="text" name="txt_nome" id="txt_nome" class="form-control">
+                                <input type="text" name="txt_nome" id="txt_nome" class="form-control" formControlName="nome">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="text-info">email</label><br>
-                                <input type="text" name="txt_email" id="txt_email" class="form-control">
+                                <input type="text" name="txt_email" id="txt_email" class="form-control" formControlName="email">
                             </div>
                             <div class="form-group">
                                 <br><label for="senha" class="text-info">Senha</label><br>
-                                <input type="password" name="txt_senha" id="txt_senha" class="form-control">
+                                <input type="password" name="txt_senha" id="txt_senha" class="form-control" formControlName="senha">
                             </div>
                             <div dataNasc class="form-group">
                                 <label for="senha2" class="text-info">Confirmação de Senha</label><br>
-                                <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
+                                <input type="password" name="txt_senha2" id="txt_senha2" class="form-control" formControlName="senhaConfirma">
                             </div>
                         </form>
                     </div>

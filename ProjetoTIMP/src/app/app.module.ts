@@ -15,6 +15,7 @@ import { PessoaComponent } from './pages/pessoa/pessoa.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { IndexComponent } from './pages/index/index.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SobreComponent } from './pages/sobre/sobre.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,15 +18,8 @@ export class IndexComponent {
   ) { }
   sessionON() {
     let i = this.session.getUserSession()
-    console.log(i)
     if (i.idUser == -1)
       return '/login'
     return '/account'
-  }
-
-  teste(){
-    let t = new SessionData()
-    this.session.setUserSession(t)
-    console.log(this.session.getUserSession())
   }
 }
