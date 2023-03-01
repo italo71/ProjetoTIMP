@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PessoaComponent } from 'src/app/pages/pessoa/pessoa.component'
 import { SessionData } from 'src/app/shared/models/session-data';
 import { SessionServiceService } from 'src/app/shared/services/session-service.service';
 

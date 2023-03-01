@@ -10,17 +10,15 @@ import { IndexComponent } from './pages/index/index.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuModule } from './pages/menu/menu.module';
 import { PreLoginModule } from './pages/pre-login/pre-login.module';
-import { PreLoginComponent } from './pages/pre-login/pre-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputTextComponent,
-    InputDateComponent,
     IndexComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MenuModule,
