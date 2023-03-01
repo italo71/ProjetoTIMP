@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     email: [null, [Validators.required]],
     nome: [null, [Validators.required]]
   })
+  
   constructor(
     private formBuilder: FormBuilder,
     private session: SessionServiceService
