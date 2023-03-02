@@ -7,6 +7,10 @@ import { PreLoginComponent } from './pages/pre-login/pre-login.component';
 import { CadastroComponent } from './pages/pre-login/cadastro/cadastro.component';
 import { MenuComponent } from './pages/menu/menu.component';
 //menu
+import { TarefasComponent } from './pages/menu/tarefas/tarefas.component';
+import { PerfilComponent } from './pages/menu/perfil/perfil.component';
+import { MetasComponent } from './pages/menu/metas/metas.component';
+import { AgendaComponent } from './pages/menu/agenda/agenda.component';
 
 
 const routes: Routes = [
@@ -23,18 +27,26 @@ const routes: Routes = [
     path: 'cadastro',
     component:CadastroComponent
   },
-  /* {
-    path: 'account',
-    component:PessoaComponent
+  {
+    path: 'login',
+    component:LoginComponent
   },
   {
-    path: 'sobre',
-    component:SobreComponent
-  }, */
+    path: 'tarefas',
+    component:TarefasComponent
+  },
   {
-    path:'login',
-    component:LoginComponent
-  }
+    path: 'perfil',
+    component:PerfilComponent
+  },
+  {
+    path: 'metas',
+    component:MetasComponent
+  },
+  {
+    path: 'agenda',
+    component:AgendaComponent
+  },
 ];
 
 

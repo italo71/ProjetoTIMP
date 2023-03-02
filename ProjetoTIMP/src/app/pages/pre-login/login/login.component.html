@@ -1,26 +1,57 @@
-<div class="body">
-    <h3 class="text-center text-white pt-5">Bem vindo a PRSystems, seu Gestor de Rotinas!</h3><br><br>
+<nav class="navbar navbar-expand-lg" style="background-color: #f7f0acbe;">
     <div class="container-fluid">
-        <div id="login-row" class="row d-flex justify-content-center align-items-center">
-            <div id="login-column" class="col-5">
-                <div id="login-box" class="col-12">
+        <a class="navbar-brand" routerLink="/prelogin"><i class="material-symbols-outlined">
+                routine
+            </i> DailyManager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row" id="login-row">
+        <div class="col-12">
+            <div class="d-flex justify-content-center mt-4 mb-4" id="login-column" >
+                <div class="card " style="border-radius: 10px;width: 50rem; text-align: center;" id="login-box">
+                    <div class="card-header" style="background-color: #6E75C1; color: white;">
+                        <h3>Login</h3>
+                    </div>
                     <form [formGroup]="resourceForm">
-                        <div class="form-group" style="padding: 15px;" style="background-color: #25274d; box-shadow: none;">
-                            <div class="col-12 justify-content-center">
-                                <h2 class="text-center text-info" style="color:#ff9b00;">Realize seu Login</h2><br>
-                                <div class="col-12">
-                                    <label for="username" class="text-info">Usuário</label><br>
-                                    <input type="text" name="username" id="username" class="form-control" formControlName="login">
+                        <div class="card-body">
+                            <div style="padding: 50px; margin-left: 45px;">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <div class="col-11">
+                                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="nome@exemplo.com">
+                                    </div>
                                 </div>
+                                <div class="mb-3 row">
+                                    <label for="inputPassword" class="form-label">Senha</label>
+                                    <div class="col-sm-11">
+                                        <input type="password" class="form-control" id="inputPassword">
+                                    </div>
+                                </div>
+                                
+                                <div class="row d-flex row-column">
+                                    <div class="col-6">
+                                        <button type="button"  style="margin-right: 15px;" (click)="logar()">Login</button>
+                                    </div>
+                                    <div class="col-5" style="margin-left: 40px;">
+                                        <a routerLink="/prelogin"><button type="button">Cancelar</button></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <legend class="d-flex justify-content-start"><a href="">Esqueceu a senha?</a></legend>
+                                        </div>
+                                        <div class="col" style="margin-right: 25px;">
+                                            <legend class="d-flex justify-content-end"><a routerLink="/cadastro">Não possui cadastro? Cadastre-se</a></legend>
+                                        </div>
+                                    </div>
 
-                                <div class="col-12">
-                                    <label for="password" class="text-info">Senha</label><br>
-                                    <input type="password" name="password" id="password" class="form-control" formControlName="senha">
+
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <button type="button" class="btn btn-info" style="margin-right: 15px;" (click)="logar()">Entrar</button>
-                                <button type="button" class="btn btn-info">Novo usuario</button>
                             </div>
                         </div>
                     </form>
@@ -30,7 +61,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="modal" style="display: none; z-index: 9999;">
+    <!-- <div class="modal fade" id="modal" style="display: none; z-index: 9999;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -74,5 +105,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div> -->
