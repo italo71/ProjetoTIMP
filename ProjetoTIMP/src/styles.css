@@ -1,11 +1,14 @@
-body {
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #F0F0F0;
 }
 
 /*header*/
 /*navegador*/
-.navbar {
+/* .navbar {
     padding-left: 5%;
     background-color: #25274D;
     color: #F0F0F0;
@@ -21,25 +24,25 @@ body {
 
 .navbar-brand {
     color: #FFFF00;
-}
+} */
 
 /*logo*/
-.logo {
+/* .logo {
     max-width: 200px;
-}
+} */
 
 /*login*/
-.botaoEntrada {
+/* .botaoEntrada {
     color: #e4e4e4;
     padding: 10px;
     margin: 5px;
-}
+} */
 
 
 
 /*main*/
 /*principal*/
-.entreAgora {
+/* .entreAgora {
     background-color: #fbff16;
 }
 
@@ -67,10 +70,10 @@ body {
     margin-left: -350px;
     margin-top: -200px;
     margin-bottom: -250px;
-}
+} */
 
 /*home*/
-.imgsvg {
+/* .imgsvg {
     max-width: 40px;
 }
 
@@ -110,11 +113,11 @@ body {
 .dicas {
     text-align: left;
     margin-left: 50px;
-}
+} */
 
 /*tarefas do dia*/
 /* Variáveis para padronizar cores */
-:root {
+/* :root {
     --primary-color: #f0f0f0;
     --secondary-color: #25274D;
     --tertiary-color: #FFFF00;
@@ -125,7 +128,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 /* .check {
     display: flex;
@@ -137,7 +140,7 @@ body {
     gap: 15px;
 }
  */
-.check_title {
+/* .check_title {
     display: flex;
     background-color: var(--secondary-color);
     width: 100%;
@@ -178,10 +181,10 @@ body {
 
 .check_item>div {
     width: 80%;
-}
+} */
 
 /* Fade ao passar cursor do mouse nos itens criados */
-.check_item:hover {
+/* .check_item:hover {
     cursor: pointer;
     transition: all .3s ease;
     background-color: var(--secondary-color);
@@ -200,10 +203,10 @@ body {
     height: 30px;
     font: inherit;
     border-radius: 20px;
-}
+} */
 
 /* Linha para reconhecer itens checados */
-.check_item>input[type='checkbox']:checked+div {
+/* .check_item>input[type='checkbox']:checked+div {
     text-decoration: line-through;
 }
 
@@ -235,21 +238,21 @@ body {
 .check_new-item>input::placeholder {
     font-style: italic;
     font-weight: normal;
-}
+} */
 
 
 /*perfil*/
-.right-titlee {
+/* .right-titlee {
     margin-top: 3%;
 }
 
 .imgsvg2 {
     max-width: 20px;
-}
+} */
 
 
 /*aba estudos e exercicios*/
-.col-4 {
+/* .col-4 {
     margin-top: 60px;
 }
 
@@ -273,10 +276,10 @@ body {
     -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-}
+} */
 
 /*cronometro*/
-.stopwatch {
+/* .stopwatch {
     display: grid;
     justify-items: center;
     grid-row-gap: 23px;
@@ -342,10 +345,10 @@ button {
 
 #pauseButton {
     display: none;
-}
+} */
 
 /*pomodoro*/
-#timer {
+/* #timer {
     color: #25274D;
     font-size: 50px;
     margin: 10px auto;
@@ -391,10 +394,10 @@ button {
 
 #buttons button#stop {
     background: #15162c;
-}
+} */
 
 /*cards*/
-h1 {
+/* h1 {
     color: #000000;
     margin: 40px 0 60px 0;
     font-weight: 300;
@@ -463,11 +466,11 @@ h1 {
 .our-team-main:hover {
     border-color: #FF9B00;
     transition: 0.5s;
-}
+} */
 
 
 /*footer*/
-.context-dark,
+/* .context-dark,
 .bg-gray-dark,
 .bg-primary {
     color: #F0F0F0;
@@ -523,21 +526,21 @@ ol {
     visibility: hidden;
     transition: .22s ease;
 }
-
+ */
 
 /*navegador*/
-.navbar{
+/* .navbar{
 padding-left: 5%;
 background-color: #25274D; 
 color: #F0F0F0;}
 .nav-link{color: #F0F0F0;}
 .navbar-toggler-icon{color: #F0F0F0;}
-.navbar-brand{color: #FFFF00;}
+.navbar-brand{color: #FFFF00;} */
 /*logo*/
-.logo { max-width: 200px;}
+/* .logo { max-width: 200px;} */
 
 /*footer*/
-.context-dark, .bg-gray-dark, .bg-primary {
+/* .context-dark, .bg-gray-dark, .bg-primary {
 color: #F0F0F0;}
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
 color: #F0F0F0;}
@@ -571,10 +574,10 @@ margin-left: -28px;
 margin-right: 7px;
 opacity: 0;
 visibility: hidden;
-transition: .22s ease;} 
+transition: .22s ease;}  */
 
 /*agenda*/
-h5 {color: #000000; justify-content: center;}
+/* h5 {color: #000000; justify-content: center;}
 .right-price{color: #000000;}
 .navv{padding: 1%;}
 .card{
@@ -590,10 +593,10 @@ box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);}
 background-color: #FF9B00; 
 margin-bottom: 8%; 
 margin-top: 1%;  
-color: #F0F0F0;}
+color: #F0F0F0;} */
 
 /*calendario*/
-.wrapper {
+/* .wrapper {
 display: flex;
 align-items: center;
 justify-content: center;
@@ -700,24 +703,24 @@ top: 15px;}
 .boto-prev:hover {
 background: rgba(0,0,0,0.2);}
 button:hover { cursor: pointer; }
-button:focus { outline: none; }
+button:focus { outline: none; } */
 
 
 
 
 
 /*bloco de notas*/
-
+/* 
 main{  
   text-align: center;
-}
+} */
 
 
 
 
 
 /* UTILITY */
-.p-small {
+/* .p-small {
   padding-bottom: 5px;
 }
 .p-medium {
@@ -841,3 +844,4 @@ form button:hover {
 
 
 
+  */

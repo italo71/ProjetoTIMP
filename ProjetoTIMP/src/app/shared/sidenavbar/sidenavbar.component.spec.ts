@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputDateComponent } from './input-date.component';
+import { SidenavbarComponent } from './sidenavbar.component';
 
-describe('InputDateComponent', () => {
-  let component: InputDateComponent;
-  let fixture: ComponentFixture<InputDateComponent>;
+describe('SidenavbarComponent', () => {
+  let component: SidenavbarComponent;
+  let fixture: ComponentFixture<SidenavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputDateComponent ]
+      declarations: [ SidenavbarComponent ]
     })
     .compileComponents();
+  });
 
-    fixture = TestBed.createComponent(InputDateComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SidenavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

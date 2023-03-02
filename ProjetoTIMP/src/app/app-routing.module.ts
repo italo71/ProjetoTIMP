@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './pages/index/index.component';
 
 //pre-login
 import { LoginComponent } from './pages/pre-login/login/login.component';
 import { PreLoginComponent } from './pages/pre-login/pre-login.component';
 import { CadastroComponent } from './pages/pre-login/cadastro/cadastro.component';
-
+import { MenuComponent } from './pages/menu/menu.component';
 //menu
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'prelogin', pathMatch: 'full' },
   {
-    path: 'home',//trocar pra menu
-    component:IndexComponent
+    path: 'prelogin',
+    component:PreLoginComponent
   },
   {
-    path: 'pre-login',
-    component:PreLoginComponent
+    path: 'menu',
+    component:MenuComponent
   },
   {
     path: 'cadastro',
