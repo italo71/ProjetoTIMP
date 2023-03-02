@@ -3,11 +3,67 @@
         <a class="navbar-brand" routerLink="/prelogin"><i class="material-symbols-outlined">
                 routine
             </i> DailyManager</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </nav>
-<p>cadastro</p>
+<div class="container-fluid">
+    <div class="row" id="login-row">
+        <div class="col-12" style="margin-bottom: 100px;">
+            <div class="d-flex justify-content-center mt-4 mb-4" id="login-column" >
+                <div class="card" style="border-radius: 10px;width: 40rem; text-align: center;" id="login-box">
+                    <div class="card-header" style="background-color: #EEAD84; color: white;">
+                        <h3>Cadastro</h3>
+                    </div>
+                    <div class="card-body">
+                        <div style="padding: 10px; margin-left: 45px;">
+                            <div class="mb-1">
+                                <label for="exampleFormControlInput1" class="form-label">Usuário</label>
+                                <div class="col-11">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="Usuário">
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                <div class="col-11">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="Nome@exemplo.com">
+                                </div>
+                            </div>
+                            <div class="mb-1 row">
+                                <label for="inputPassword" class="form-label">Senha</label>
+                                <div class="col-sm-11">
+                                    <input type="password" class="form-control" id="inputPassword">
+                                </div>
+                            </div>
+                            <div class="mb-4 row">
+                                <label for="inputPassword" class="form-label">Confirme a Senha</label>
+                                <div class="col-sm-11">
+                                    <input type="password" class="form-control" id="inputPassword">
+                                </div>
+                            </div>
+                            
+                            <div class="row d-flex row-column">
+                                <div class="col-5" style="margin-left: 20px;">
+                                    <button type="button"  style="margin-right: 15px;">Cadastrar</button>
+                                </div>
+                                <div class="col-4">
+                                    <a routerLink="/prelogin"><button type="button">Cancelar</button></a>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-6">
+                                        <legend class="d-flex justify-content-center"><a routerLink="/login">Já possui cadastro? Acesse aqui</a></legend>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

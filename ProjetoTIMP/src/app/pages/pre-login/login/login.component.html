@@ -11,20 +11,20 @@
 </nav>
 <div class="container-fluid">
     <div class="row" id="login-row">
-        <div class="col-12">
+        <div class="col-12" style="margin-bottom: 100px;">
             <div class="d-flex justify-content-center mt-4 mb-4" id="login-column" >
-                <div class="card " style="border-radius: 10px;width: 50rem; text-align: center;" id="login-box">
+                <div class="card" style="border-radius: 10px;width: 40rem; text-align: center;" id="login-box">
                     <div class="card-header" style="background-color: #6E75C1; color: white;">
                         <h3>Login</h3>
                     </div>
                     <form [formGroup]="resourceForm">
                         <div class="card-body">
-                            <div style="padding: 50px; margin-left: 45px;">
+                            <div style="padding: 30px; margin-left: 45px;">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <label for="exampleFormControlInput1" class="form-label">Usuário</label>
                                     <div class="col-11">
                                         <input type="email" class="form-control" id="exampleFormControlInput1"
-                                            placeholder="nome@exemplo.com">
+                                            placeholder="Usuário">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -35,17 +35,17 @@
                                 </div>
                                 
                                 <div class="row d-flex row-column">
-                                    <div class="col-6">
+                                    <div class="col-5" style="margin-left: 20px;">
                                         <button type="button"  style="margin-right: 15px;" (click)="logar()">Login</button>
                                     </div>
-                                    <div class="col-5" style="margin-left: 40px;">
+                                    <div class="col-4">
                                         <a routerLink="/prelogin"><button type="button">Cancelar</button></a>
                                     </div>
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-4" style="margin-left: 40px;">
                                             <legend class="d-flex justify-content-start"><a href="">Esqueceu a senha?</a></legend>
                                         </div>
-                                        <div class="col" style="margin-right: 25px;">
+                                        <div class="col-6" style="margin-right: 25px;">
                                             <legend class="d-flex justify-content-end"><a routerLink="/cadastro">Não possui cadastro? Cadastre-se</a></legend>
                                         </div>
                                     </div>
@@ -59,50 +59,3 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="modal" style="display: none; z-index: 9999;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">
-                        <font color="25274d">CADASTRO DE USUARIO</font>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" [formGroup]="resourceFormCadastro">
-                            <h3 class="text-center text-info">Novo usuário</h3>
-                            <div class="form-group">
-                                <label for="login" class="text-info">Usuário</label><br>
-                                <input type="text" name="txt_login" id="txt_login" class="form-control" formControlName="login">
-                            </div>
-                            <div class="form-group">
-                                <label for="nome" class="text-info">Nome completo</label><br>
-                                <input type="text" name="txt_nome" id="txt_nome" class="form-control" formControlName="nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="text-info">email</label><br>
-                                <input type="text" name="txt_email" id="txt_email" class="form-control" formControlName="email">
-                            </div>
-                            <div class="form-group">
-                                <br><label for="senha" class="text-info">Senha</label><br>
-                                <input type="password" name="txt_senha" id="txt_senha" class="form-control" formControlName="senha">
-                            </div>
-                            <div dataNasc class="form-group">
-                                <label for="senha2" class="text-info">Confirmação de Senha</label><br>
-                                <input type="password" name="txt_senha2" id="txt_senha2" class="form-control" formControlName="senhaConfirma">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="btn_salvar" class="btn btn-info">Salvar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->

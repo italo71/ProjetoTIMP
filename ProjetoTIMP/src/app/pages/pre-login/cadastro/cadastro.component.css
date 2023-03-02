@@ -2,3 +2,34 @@ a{
     color: #2b2d42;
     text-decoration: none;
 }
+
+label{
+    display: flex;
+    justify-content: start;
+}
+
+button{
+    border: 1px solid #4c5296;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    background-color:#6E75C1 ;
+    transition: 0.5s;
+    height: 40px;
+    width: 200px;
+}
+
+button:hover{
+    background-color:#4c5296 ;
+}
+
+legend{
+    font-size: 15px;
+    margin-top: 2px;
+    
+}
+
+legend a{
+    color: #b1b1b1;
+}
