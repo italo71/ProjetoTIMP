@@ -59,8 +59,8 @@
         }
     }
 
-    background: #1d1e2c;
-    color: #6d6e7e;
+    background: #EEAD84;
+    color: rgb(173, 91, 91);
 
     .header {
         display: flex;
@@ -68,11 +68,11 @@
         justify-content: center;
         padding: 10px;
 
-        background: #0f1017;
+        background: #b67f5e;
 
         h1 {
             font-size: 20px;
-            color: #6d6e7e;
+            color: #fafafa;
             margin: 0;
             flex: 1;
             transition: 0.3s;
@@ -81,7 +81,7 @@
         }
 
         .chevron {
-            color: #6d6e7e;
+            color: #ffffff;
             cursor: pointer;
             transition: 0.3s;
             margin-left: -25px;
@@ -105,18 +105,6 @@
 
     .content {
         .link {
-            .children {
-                .content {
-                    background: #27283a;
-                    // padding-left: 30px;
-                    padding-left: 10px;
-
-                    &.active {
-                        background: #191a27;
-                    }
-                }
-            }
-
             .content {
                 display: flex;
                 align-items: center;
@@ -128,7 +116,7 @@
                 transition: 0.3s;
 
                 &:hover {
-                    background: #0f1017;
+                    background: #c98d67;
 
                     .title {
                         color: white;
@@ -140,7 +128,7 @@
                 }
 
                 &.active {
-                    background: #0f1017;
+                    background: #c98d67;
 
                     .title {
                         color: white;
@@ -158,7 +146,7 @@
                 .title {
                     flex: 1;
                     // display: none;
-                    color: #6d6e7e;
+                    color: #ffffff;
                     transition: 0.3s;
                     max-width: 0px;
                     overflow: hidden;

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./agenda.component.css']
 })
 export class AgendaComponent {
-
+  sidebarExpanded = true;
 }

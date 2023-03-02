@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./metas.component.css']
 })
 export class MetasComponent {
-
+  sidebarExpanded = true;
 }
