@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { MenuComponent } from './menu.component';
 import { AgendaComponent } from './agenda/agenda.component';
@@ -22,7 +24,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    BrowserModule,
+    FormsModule
   ],
   exports:[
     MenuComponent,
