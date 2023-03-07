@@ -1,0 +1,19 @@
+<div class="mb-4 d-flex" style="gap: 32px;">
+    <form [formGroup]="newTodoForm" class="flex mt-4" (ngSubmit)="addTask()">
+        <input class="shadow appearance-none border rounded w-full p-2 mr-4 text-grey-darker" placeholder="Adicionar"
+            formControlName="todoItem">
+        <button type="submit"
+            class="btn btn-primary m-2">Adicionar
+        </button>
+    </form>
+
+</div>
+<div>
+    <div class="flex mb-4 items-center" *ngFor="let value of taskList; index as i">
+        <p class="w-full text-grey-darkest" [ngClass]="{'line-through': value.completed}">{{value.name}}</p>
+        <button class="btn btn-primary m-2"
+            (click)="markDone(value)">Feito</button>
+        <button class="btn btn-primary"
+            (click)="removeTask(i)">Remover</button>
+    </div>
+</div>

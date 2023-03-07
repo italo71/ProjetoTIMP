@@ -4,25 +4,32 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RologioComponent } from './components/rologio/rologio.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 
 @NgModule({
   declarations: [
     SidebarComponent,
-    RologioComponent
+    RologioComponent,
+    PomodoroComponent,
+    TasksComponent
 
   ],
   imports: [
     CommonModule,
     RouterModule,
     BrowserModule, 
-    FormsModule 
+    FormsModule ,
+    ReactiveFormsModule
     
   ],
   exports: [
     SidebarComponent,
-    RologioComponent
+    RologioComponent,
+    PomodoroComponent,
+    TasksComponent
 
   ]
 })
