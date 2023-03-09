@@ -4,7 +4,7 @@
     margin: 50px auto 0;
     width: 200px;
     height: 200px;
-    background-color: #6E75C1;
+    background-color: #202020;
     border-radius: 50%;
     margin-bottom: 90px;
 }
@@ -18,15 +18,15 @@
 }
 
 .hour {
-    background-color: #EEAD84;
+    background-color: #1aff00;
 }
 
 .minute {
-    background-color: #F7EFAC;
+    background-color: #00a2ff;
 }
 
 .second {
-    background-color: #E7E7E7;
+    background-color: #ff5900;
 }
 
 .center-circle {

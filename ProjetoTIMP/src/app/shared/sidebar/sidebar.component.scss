@@ -59,8 +59,8 @@
         }
     }
 
-    background: #EEAD84;
-    color: rgb(173, 91, 91);
+    background: #202020;
+    color: rgb(103, 24, 187);
 
     .header {
         display: flex;
@@ -68,7 +68,7 @@
         justify-content: center;
         padding: 10px;
 
-        background: #b67f5e;
+        background: #2e2e2e;
 
         h1 {
             font-size: 20px;
@@ -116,19 +116,15 @@
                 transition: 0.3s;
 
                 &:hover {
-                    background: #c98d67;
+                    background: #1eff00;
 
                     .title {
                         color: white;
                     }
-
-                    svg {
-                        fill: white;
-                    }
                 }
 
                 &.active {
-                    background: #c98d67;
+                    background: #00ff0d;
 
                     .title {
                         color: white;

@@ -1,8 +1,6 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #f7f0acbe;">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/prelogin"><i class="material-symbols-outlined">
-                routine
-            </i> DailyManager</a>
+        <a class="navbar-brand title" routerLink="/prelogin">DailyManager</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,10 +12,8 @@
         <div class="col-12" style="margin-bottom: 100px;">
             <div class="d-flex justify-content-center mt-4 mb-4" id="login-column" >
                 <div class="card" style="border-radius: 10px;width: 40rem; text-align: center;" id="login-box">
-                    <div class="card-header" style="background-color: #EEAD84; color: white;">
-                        <h3>Cadastro</h3>
-                    </div>
                     <div class="card-body">
+                        <h4 style="color: aliceblue;">Cadastrar</h4>
                         <div style="padding: 10px; margin-left: 45px;">
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Usuário</label>
@@ -36,30 +32,28 @@
                             <div class="mb-1 row">
                                 <label for="inputPassword" class="form-label">Senha</label>
                                 <div class="col-sm-11">
-                                    <input type="password" class="form-control" id="inputPassword">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="inputPassword" class="form-label">Confirme a Senha</label>
                                 <div class="col-sm-11">
-                                    <input type="password" class="form-control" id="inputPassword">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Confirme a Senha">
                                 </div>
                             </div>
                             
                             <div class="row d-flex row-column">
                                 <div class="col-5" style="margin-left: 20px;">
-                                    <button type="button"  style="margin-right: 15px;">Cadastrar</button>
+                                    <button type="button"  style="margin-right: 15px;" class="cadastrar">Cadastrar</button>
                                 </div>
                                 <div class="col-4">
-                                    <a routerLink="/prelogin"><button type="button">Cancelar</button></a>
+                                    <a routerLink="/prelogin"><button type="button" class="cancelar">Cancelar</button></a>
                                 </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-6">
+                                <div style="margin-left: -25px;">
+                                    <div class="col-12 mt-4">
                                         <legend class="d-flex justify-content-center"><a routerLink="/login">Já possui cadastro? Acesse aqui</a></legend>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -67,3 +61,22 @@
             </div>
         </div>
     </div>
+    <footer class="text-center text-white">
+        <div class="row">
+            <div class="col-7 d-flex justify-content-start p-1" style="margin-left: 20px;">
+                <section class=" mt-2 mb-2 d-flex justify-content-start p-2" style="gap: 50px;">
+                    <a class="social-inner" href="https://www.facebook.com/PRSystems-102611902459043"
+                        target="_blank">Facebook</a>
+                    <a class="social-inner" href="https://www.instagram.com/" target="_blank">Intagram</a>
+                    <a class="social-inner" href="https://twitter.com/site_wizard" target="_blank">Twitter</a>
+                    <a class="social-inner" href="https://mail.google.com/mail/u/3/?ogbl#inbox"
+                        target="_blank">Google</a>
+                    <a class="social-inner" href="https://github.com/Clousbi/ProjetoTIMP" target="_blank">GitHub</a>
+                </section>
+            </div>
+            <div class=" col-4 d-flex mt-3 mb-2 justify-content-end">
+                © 2023 Copyright:
+                <a class="text-white" href="https://dailymanager.com/"> DailyManager.com</a>
+            </div>
+        </div>
+    </footer>

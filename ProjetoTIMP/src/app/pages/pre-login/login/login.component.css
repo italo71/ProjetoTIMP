@@ -2,26 +2,36 @@ a{
     color: #2b2d42;
     text-decoration: none;
 }
+a:hover {
+    color: aliceblue;
+}
 
 label{
     display: flex;
     justify-content: start;
+    color: aliceblue;
 }
 
 button{
-    border: 1px solid #F7EFAC;
+border: none;
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    color: #000000;
-    background-color:#f0e892 ;
+    color: #ffffff;
+    background-color:#0088ff ;
     transition: 0.5s;
     height: 40px;
     width: 200px;
+    align-items: center;
 }
 
-button:hover{
-    background-color:#c9c274 ;
+.cancelar:hover{
+    background-color:#ff5100 ;
+
+}
+
+.logar:hover{
+    background-color:#00ff1e ;
 }
 
 legend{
@@ -32,4 +42,35 @@ legend{
 
 legend a{
     color: #b1b1b1;
+}
+
+.title {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 45px;
+    width: 336px;
+    height: 81px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 60px;
+    color: #b1b1b1;
+
+   
+    background-clip: text;
+    text-fill-color: transparent;
+
+    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #202020;
+    transition: 0.5s;
+    transform: translateX(0) scale(1);
+}
+
+legend{
+    color: aliceblue;
 }
