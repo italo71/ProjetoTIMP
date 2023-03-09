@@ -1,63 +1,69 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #f7f0acbe;">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/prelogin"><i class="material-symbols-outlined">
-                routine
-            </i> DailyManager</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <button><a class="nav-link" routerLink="/login">Login</a></button>
-                <button><a class="nav-link" routerLink="/cadastro">Cadastro</a></button>
-            </div>
-        </div>
-    </div>
-</nav>
-<div id="rotas" class="d-flex justify-content-center mt-2" style="gap:20px;">
-    <a routerLink="/menu">Menu</a>
-    <a routerLink="/agenda">Agenda</a>
-    <a routerLink="/metas">Metas</a>
-    <a routerLink="/perfil">Perfil</a>
-    <a routerLink="/tarefas">Tarefas</a>
-</div>
-<hr>
 <div class="container-fluid">
-    <div class="row" >
-        <div class="col-12">
-            <div class="d-flex justify-content-center mt-4 mb-4">
-                <div class="card " style="border-radius: 10px;width: 70rem; text-align: center;">
-                    <div class="card-header">
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sia at ipsam fuga sunostr Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Itaque vitae libero odio, unde quis amet. Esse, eligendi quo
-                            necessitatibus ex cupiditate laborum amet, tempora corrupti natus odit, nostrum magni
-                            placeat. um? Lorem ipsum dolor sit amet, consectetur adipi</p>
-                    </div>
-                    <div class="card-body">
-                        <!-- imagem -->
-                    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="/prelogin"><span class="title">DailyManager</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <button class="btn"><a class="nav-link" routerLink="/login">Entrar</a></button>
+                    <p style="margin-top: 13px;"><strong>|</strong></p>
+                    <button class="btn"><a class="nav-link" routerLink="/cadastro">Comece agora</a></button>
                 </div>
             </div>
         </div>
-        <div class="col-12" style="margin-bottom: 100px;">
-            <div class="d-flex justify-content-center mt-4">
-                <div class="card " style="border-radius: 10px;width: 70rem; text-align: center;">
-                    <div class="card-header">
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sia at ipsam fuga sunostr Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Itaque vitae libero odio, unde quis amet. Esse, eligendi quo
-                            necessitatibus ex cupiditate laborum amet, tempora corrupti natus odit, nostrum magni
-                            placeat. um? Lorem ipsum dolor sit amet, consectetur adipi</p>
-                    </div>
-                    <div class="card-body">
-                        <!-- imagem -->
-                    </div>
-                </div>
-            </div>
-        </div>
+    </nav>
+    <!-- <div id="rotas" class="d-flex justify-content-center mt-2" style="gap:20px;">
+        <a routerLink="/menu">Menu</a>
+        <a routerLink="/agenda">Agenda</a>
+        <a routerLink="/metas">Metas</a>
+        <a routerLink="/perfil">Perfil</a>
+        <a routerLink="/tarefas">Tarefas</a>
     </div>
-    
+    <hr>  -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-7">
+                <div class="d-flex justify-content-start mb-4 p-4">
+                    <div class="card" style="border-radius: 10px;width: 670px; height: 400px;">
+                        <img src="./../../../assets/img/Untitled (1).png" alt="img_work"
+                            style="border-radius: 10px;width: 670px; height: 400px;" >
+                            <button class="btn_img"><a class="nav-link" routerLink="/cadastro">Comece agora</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="d-flex justify-content-start mb-4 p-4">
+                    <div class="card " style="border-radius: 10px;width: 30rem; text-align: center; height: 10rem;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="d-flex mt-3"><img src="./../../../assets/img/daily.png" alt=""
+                                        style="width: 20%;">
+                                        <div style="color:aliceblue; text-align: center; font-size: 24px; margin-left: 100px;">
+                                            Tenhas suas atividades planejadas antecipadamente
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-start mb-4 p-4">
+                    <div class="card " style="border-radius: 10px;width: 30rem; text-align: center; height: 10rem;">
+                        <div class="card-body">
+                            <div class="d-flex mt-3"><img src="./../../../assets/img/workplace.png" alt=""
+                                    style="width: 20%;">
+                                    <div style="color:aliceblue; text-align: center; font-size: 24px; margin-left: 100px;">
+                                        Deixe seu dia-a-dia mais produtivo
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
 </div>

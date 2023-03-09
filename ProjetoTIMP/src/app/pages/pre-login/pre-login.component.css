@@ -1,18 +1,59 @@
-a{
+a {
     color: #2b2d42;
     text-decoration: none;
-}
-
-button{
-    border: 1px solid #F7EFAC;
-    border-radius: 10px;
-    display: flex;
-    margin-right: 15px;
-    color: white;
-    background-color:#f0e892 ;
     transition: 0.5s;
 }
 
-button:hover{
-    background-color:#c9c274 ;
+a:hover {
+    color: aliceblue;
+}
+
+.card {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #202020;
+    transition: 0.5s;
+}
+.card:hover{
+    
+}
+
+.title {
+    margin-left: 50px;
+    width: 336px;
+    height: 81px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 60px;
+
+    background: linear-gradient(268.82deg, rgba(255, 92, 0, 0.2) 22.46%, rgba(20, 255, 0, 0.2) 54.51%, rgba(0, 133, 255, 0.2) 94.29%), #8626D1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_img {
+    border: none;
+
+    position:absolute;
+    margin: 180px;
+    margin-top: 260px;
+
+    width: 300px;
+    height: 60px;
+
+    background: linear-gradient(86.83deg, rgba(20, 255, 0, 0.2) 0%, rgba(255, 92, 0, 0.2) 43.45%, rgba(0, 133, 255, 0.2) 85.94%), #8829D3;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.btn_img:hover{
+    width: 310px;
+    height: 65px;
+    margin: 175px;
+    margin-top: 255px;
+
 }

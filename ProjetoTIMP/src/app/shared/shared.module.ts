@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { BackgroundColorComponent } from './components/background-color/background-color.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
     SidebarComponent,
     RologioComponent,
     PomodoroComponent,
-    TasksComponent
+    TasksComponent,
+    BackgroundColorComponent
 
   ],
   imports: [
@@ -29,7 +31,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
     SidebarComponent,
     RologioComponent,
     PomodoroComponent,
-    TasksComponent
+    TasksComponent,
+    BackgroundColorComponent
 
   ]
 })

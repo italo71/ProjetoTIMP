@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuModule } from './pages/menu/menu.module';
 import { PreLoginModule } from './pages/pre-login/pre-login.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -22,6 +23,7 @@ import { PreLoginModule } from './pages/pre-login/pre-login.module';
     ReactiveFormsModule,
     MenuModule,
     PreLoginModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
