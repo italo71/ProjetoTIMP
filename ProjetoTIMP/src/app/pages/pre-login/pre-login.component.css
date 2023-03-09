@@ -13,13 +13,17 @@ a:hover {
     border-radius: 10px;
     background-color: #202020;
     transition: 0.5s;
+    transform: translateX(0) scale(1);
 }
-.card:hover{
+.card:hover, .card:focus{
+    transform: translateX(5px) scale(1.1);
     
 }
 
 .title {
-    margin-left: 50px;
+    position: absolute;
+    margin-left: -320px;
+    margin-top: -80px;
     width: 336px;
     height: 81px;
     font-style: normal;
@@ -27,7 +31,7 @@ a:hover {
     font-size: 32px;
     line-height: 60px;
 
-    background: linear-gradient(268.82deg, rgba(255, 92, 0, 0.2) 22.46%, rgba(20, 255, 0, 0.2) 54.51%, rgba(0, 133, 255, 0.2) 94.29%), #8626D1;
+    background: linear-gradient(268.82deg, rgba(255, 94, 0, 0.779) 22.46%, rgba(21, 255, 0, 0.705) 54.51%, rgba(0, 132, 255, 0.771) 94.29%), #8726d141;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -46,7 +50,7 @@ a:hover {
     width: 300px;
     height: 60px;
 
-    background: linear-gradient(86.83deg, rgba(20, 255, 0, 0.2) 0%, rgba(255, 92, 0, 0.2) 43.45%, rgba(0, 133, 255, 0.2) 85.94%), #8829D3;
+    background: linear-gradient(86.83deg, rgba(21, 255, 0, 0.689) 0%, rgba(255, 94, 0, 0.697) 43.45%, rgba(0, 132, 255, 0.73) 85.94%), #913be1;
     border-radius: 10px;
     transition: 0.5s;
 }
@@ -55,5 +59,24 @@ a:hover {
     height: 65px;
     margin: 175px;
     margin-top: 255px;
+}
 
+.elipse{
+    position: relative;
+    width: 600px;
+    margin-left: -200px;
+    margin-top: -300px;
+    transition: all 0.5s; 
+}
+.elipse:hover{
+    transform: scale(1.1);
+}
+
+.title_img{
+    margin: 100px;
+    margin-top: 80px;
+    position: absolute;
+    font-size: 60px;
+    text-align: center;
+    color: aliceblue;
 }
