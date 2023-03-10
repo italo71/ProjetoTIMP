@@ -43,7 +43,7 @@
 .digital-clock {
     position: absolute;
     top: 260px;
-    left: 50%;
+    left: 20%;
     transform: translate3d(-50%, 0, 0);
     font-size: 2em;
     font-family: 'Source Sans Pro', sans-serif;
