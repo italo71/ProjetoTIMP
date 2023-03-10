@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import { SessionServiceService } from 'src/app/shared/services/session-service.service';
+import { SessionService } from 'src/app/shared/service/session.service';
 
 @Component({
   selector: 'app-login',
@@ -15,15 +15,15 @@ export class LoginComponent {
   
   constructor(
     private formBuilder: FormBuilder,
-    //private session: SessionServiceService
+    public session:SessionService
   ) {
   }
 
   logar() {
     let login = this.resourceForm.get('login')?.value
     let senha = this.resourceForm.get('senha')?.value
-    /* this.session.logar(login, senha).subscribe((data:any)=>{
+    this.session.logar(login, senha).subscribe((data:any)=>{
       console.log(data)
-    }) */
+    })
   }
 }
