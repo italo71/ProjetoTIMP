@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { BackgroundColorComponent } from './components/background-color/background-color.component';
+import { SessionServiceService } from './services/session-service.service';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { BackgroundColorComponent } from './components/background-color/backgrou
     RologioComponent,
     PomodoroComponent,
     TasksComponent,
-    BackgroundColorComponent
+    BackgroundColorComponent,
+    SessionServiceService
 
   ],
   imports: [
@@ -32,7 +35,8 @@ import { BackgroundColorComponent } from './components/background-color/backgrou
     RologioComponent,
     PomodoroComponent,
     TasksComponent,
-    BackgroundColorComponent
+    BackgroundColorComponent,
+    SessionServiceService
 
   ]
 })
