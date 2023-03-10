@@ -10,51 +10,55 @@
 <div class="container-fluid">
     <div class="row" id="login-row">
         <div class="col-12" style="margin-bottom: 100px;">
-            <div class="d-flex justify-content-center mt-4 mb-4" id="login-column" >
-                <div class="card mt-4" style="border-radius: 10px;width: 40rem; text-align: center; background-color: #202020;" id="login-box">
-                    <form [formGroup]="resourceForm">
-                        <div class="card-body">
-                            <h4 style="color: aliceblue;"> Entrar</h4>
-                            <div style="padding: 30px; margin-left: 45px;">
+            <div class="d-flex justify-content-center mt-4 mb-4" id="login-column">
+                <div class="card mt-4"
+                    style="border-radius: 10px;width: 40rem; text-align: center; background-color: #202020;"
+                    id="login-box">
+                    <div class="card-body">
+                        <h4 style="color: aliceblue;"> Entrar</h4>
+                        <div style="padding: 30px; margin-left: 45px;">
+                            <form [formGroup]="resourceForm">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Usuário</label>
                                     <div class="col-11">
-                                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        <input type="email" class="form-control" formControlName="login" id="exampleFormControlInput1"
                                             placeholder="Usuário">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputPassword" class="form-label">Senha</label>
                                     <div class="col-sm-11">
-                                        <input type="password" class="form-control" id="inputPassword">
+                                        <input type="password" class="form-control" formControlName="senha" id="inputPassword">
                                     </div>
                                 </div>
-                                
-                                <div class="row d-flex row-column">
-                                    <div class="col-5" style="margin-left: 20px;">
-                                        <button type="button" class="logar" style="margin-right: 15px;" (click)="logar()">Login</button>
+                            </form>
+                            <div class="row d-flex row-column">
+                                <div class="col-5" style="margin-left: 20px;">
+                                    <button type="button" class="logar" style="margin-right: 15px;"
+                                        (click)="logar()">Login</button>
+                                </div>
+                                <div class="col-4">
+                                    <a routerLink="/prelogin"><button type="button"
+                                            class="cancelar">Cancelar</button></a>
+                                </div>
+                                <div class="row d-flex" style="gap: 25px;">
+                                    <div class="col-4" style="margin-left: 23px;">
+                                        <legend class="d-flex justify-content-start"><a href="">Esqueceu a
+                                                senha?</a></legend>
                                     </div>
-                                    <div class="col-4">
-                                        <a routerLink="/prelogin"><button type="button" class="cancelar">Cancelar</button></a>
+                                    <div class="col-6">
+                                        <legend class="d-flex justify-content-end"><a routerLink="/cadastro">Não
+                                                possui cadastro? Cadastre-se</a></legend>
                                     </div>
-                                    <div class="row d-flex" style="gap: 25px;">
-                                            <div class="col-4" style="margin-left: 23px;">
-                                                <legend class="d-flex justify-content-start"><a href="">Esqueceu a senha?</a></legend>
-                                            </div>
-                                            <div class="col-6">
-                                                <legend class="d-flex justify-content-end"><a routerLink="/cadastro">Não possui cadastro? Cadastre-se</a></legend>
-                                            </div>
-                                    </div>
-
-
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div><div id="rotas" class="d-flex justify-content-center mt-2" style="gap:20px;">
+    </div>
+    <div id="rotas" class="d-flex justify-content-center mt-2" style="gap:20px;">
         <a routerLink="/menu">Menu</a>
         <a routerLink="/agenda">Agenda</a>
         <a routerLink="/metas">Metas</a>
@@ -80,4 +84,3 @@
             </div>
         </div>
     </footer>
-

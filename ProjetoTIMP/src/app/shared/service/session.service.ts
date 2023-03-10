@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SessionService {
-
+ws:string = 'https://rotina-timp.azurewebsites.net/'
+local:string = 'http://localhost:8080/'
   constructor(
     private http: HttpClient,
   ) { }
@@ -15,6 +16,6 @@ export class SessionService {
       "login": login,
       "senha": pass
     }
-    return this.http.post('user/get', JSON.stringify(postData));
+    return this.http.post(this.local + 'user/get', postData);
   }
 }
