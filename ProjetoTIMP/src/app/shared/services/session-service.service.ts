@@ -1,13 +1,19 @@
-import { VariableBinding } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { SessionData } from '../models/session-data';
-import { sha256 } from 'js-sha256';
+import { Enviroment } from '../enviroment/enviroment';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessionServiceService {
-  constructor() { }
+  ws: any;
+  constructor(
+    private Enviroment: Enviroment,
+    private http: HttpClient,
+  ) {
+    this.ws = this; Enviroment.url
+  }
   session = new SessionData();
   setUserSession(data: SessionData) {
     this.session = data
@@ -15,10 +21,12 @@ export class SessionServiceService {
   getUserSession() {
     return this.session
   }
-  criptografar(pass: string) {
-    return sha256.hmac(pass, 'texto');
-  }
-  logar(login:string, pass:string){
-    
+  logar(login: string, pass: string) {
+    let postData = {
+      "type": "login",
+      "login": login,
+      "senha": pass
+    }
+    return this.http.post(this.ws + 'user/get', JSON.stringify(postData));
   }
 }
