@@ -16,6 +16,6 @@ local:string = 'http://localhost:8080/'
       "login": login,
       "senha": pass
     }
-    return this.http.post(this.local + 'user/get', postData);
+    return this.http.post(this.ws + 'user/get', postData);
   }
 }
