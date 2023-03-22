@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from 'src/app/shared/service/session.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
   sidebarExpanded = true;
+  nomeUsuario = this.session.obterNomeUsu()
+  constructor(
+    private session:SessionService,
+  ){}
 }
