@@ -8,7 +8,9 @@ import { SessionService } from 'src/app/shared/service/session.service';
 })
 export class MenuComponent {
   sidebarExpanded = true;
-  nomeUsuario = this.session.obterNomeUsu()
+  dataNasc = this.session.obterDataNascUsu();
+  nomeUsuario = this.session.obterNomeUsu();
+  emailUsuario = this.session.obterEmailUsu();
   constructor(
     private session:SessionService,
   ){}

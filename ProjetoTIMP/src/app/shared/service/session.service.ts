@@ -11,7 +11,7 @@ export class SessionService {
   local: string = 'http://localhost:8080/'
   constructor(
     private http: HttpClient,
-    private router:Router,
+    private router: Router,
   ) { }
   logar(login: string, pass: string) {
     let postData = {
@@ -19,7 +19,19 @@ export class SessionService {
       "login": login,
       "senha": pass
     }
-    return this.http.post(this.ws + 'user/get', postData);
+    return this.http.post(this.local + 'user/get', postData);
+  }
+  cadastrar(nome: any, email: any, senha: any, data: any, login: any) {
+    let postData = {
+      "type": "cadastrar",
+      "nome": nome,
+      "login": login,
+      "senha": senha,
+      "data_nasc": data,
+      "email": email
+    }
+    console.log(postData);
+    return this.http.post(this.local + 'user/post', postData);
   }
   limparSessao() {
     sessionStorage.clear()
@@ -28,7 +40,8 @@ export class SessionService {
   criarSessao(dados: any) {
     let json = {
       "nome": dados.nome,
-      "email": dados.email
+      "email": dados.email,
+      "data_nasc":dados.data_nasc
     }
     sessionStorage.setItem('session', JSON.stringify(json));
     return this.obterNomeUsu()
@@ -43,6 +56,18 @@ export class SessionService {
     let sessao = this.obterSessao();
     if (sessao.nome != null)
       return sessao.nome
+    return null
+  }
+  obterEmailUsu() {
+    let sessao = this.obterSessao();
+    if (sessao.email != null)
+      return sessao.email
+    return null
+  }
+  obterDataNascUsu() {
+    let sessao = this.obterSessao();
+    if (sessao.data_nasc != null)
+      return sessao.data_nasc;
     return null
   }
 }

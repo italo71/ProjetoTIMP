@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     let login = this.resourceForm.get('login')?.value
     let senha = this.resourceForm.get('senha')?.value
     this.session.logar(login, senha).subscribe((data: any) => {
+      console.log(data)
       if (data.status == 'success') {
         this.session.criarSessao(data.data)
         this.router.navigate(['/menu'])

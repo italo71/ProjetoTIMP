@@ -18,36 +18,48 @@
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Usuário</label>
                                 <div class="col-11">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    <input type="text" class="form-control" [(ngModel)]="login" id="exampleFormControlInput1"
                                         placeholder="Usuário">
                                 </div>
                             </div>
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                                 <div class="col-11">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="email"
                                         placeholder="Nome@exemplo.com">
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                                <div class="col-11">
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="nome"
+                                        placeholder="Nome">
                                 </div>
                             </div>
                             <div class="mb-1 row">
                                 <label for="inputPassword" class="form-label">Senha</label>
                                 <div class="col-sm-11">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha" [(ngModel)]="senha">
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="inputPassword" class="form-label">Confirme a Senha</label>
                                 <div class="col-sm-11">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Confirme a Senha">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Confirme a Senha" [(ngModel)]="confirmaSenha">
                                 </div>
                             </div>
-                            
+                            <div class="mb-4 row">
+                                <label for="inputPassword" class="form-label">Data de Nascimento</label>
+                                <div class="col-sm-11">
+                                    <input type="date" class="form-control" id="inputPassword" placeholder="Confirme a Senha" [(ngModel)]="data_nasc">
+                                </div>
+                            </div>
                             <div class="row d-flex row-column">
                                 <div class="col-5" style="margin-left: 20px;">
-                                    <button type="button"  style="margin-right: 15px;" class="cadastrar">Cadastrar</button>
+                                    <button type="button"  style="margin-right: 15px;" class="cadastrar" (click)="registrar()">Cadastrar</button>
                                 </div>
                                 <div class="col-4">
-                                    <a routerLink="/prelogin"><button type="button" class="cancelar">Cancelar</button></a>
+                                    <a routerLink="/prelogin"><button type="button" class="cancelar" routerLink="/">Cancelar</button></a>
                                 </div>
                                 <div style="margin-left: -25px;">
                                     <div class="col-12 mt-4">
