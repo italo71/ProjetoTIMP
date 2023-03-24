@@ -19,7 +19,7 @@ export class SessionService {
       "login": login,
       "senha": pass
     }
-    return this.http.post(this.local + 'user/get', postData);
+    return this.http.post(this.ws + 'user/get', postData);
   }
   cadastrar(nome: any, email: any, senha: any, data: any, login: any) {
     let postData = {
@@ -31,7 +31,7 @@ export class SessionService {
       "email": email
     }
     console.log(postData);
-    return this.http.post(this.local + 'user/post', postData);
+    return this.http.post(this.ws + 'user/post', postData);
   }
   limparSessao() {
     sessionStorage.clear()
