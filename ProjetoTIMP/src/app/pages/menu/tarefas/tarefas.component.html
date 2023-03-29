@@ -24,9 +24,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col" style="margin-left: 100px;">
+                <div class="col" style="margin-left: 100px;" (mouseover)="apareceBtn()" (mouseout)="apareceBtn()">
+                    <button class="btn btn-primary d-flex align-itens-center" id="btn-refresh" (click)="getTarefas()"
+                        style="z-index: 1; position: absolute; margin-left: 33px;"
+                        [style.margin-top]="(d_btn)?'-25px':'20px'"><span style="font-size: 20px;"
+                            class="material-symbols-outlined">
+                            sync
+                        </span></button>
                     <div class="card m-3"
-                        style="width: 500px; height: 500px; border: 1px solid #646aaf; background-color: #6E75C1;">
+                        style="width: 500px; height: 500px; border: 1px solid #646aaf; background-color: #6E75C1; z-index: 9999;">
                         <ul style="max-height: 500px; overflow-y: auto; overflow-x: hidden;">
                             <li *ngFor="let tarefa of tarefas" (click)="abrirModal(tarefa.titulo, tarefa.descricao)"
                                 data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -94,8 +100,4 @@
             </div>
         </div>
     </div>
-</div>
-<my-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></my-sidebar>
-<div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
-    <router-outlet></router-outlet>
 </div>

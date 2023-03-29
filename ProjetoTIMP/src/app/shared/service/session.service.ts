@@ -51,7 +51,7 @@ export class SessionService {
   obterSessao() {
     let session = sessionStorage.getItem('session');
     if (session == null)
-      return { "status": "não logado" }
+      return null
     return JSON.parse(session)
   }
   obterNomeUsu() {

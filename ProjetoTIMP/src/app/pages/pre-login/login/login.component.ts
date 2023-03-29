@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     let sessao = this.session.obterSessao()
-    if (sessao.nome != null)
+    if (sessao != null)
       this.router.navigate(['/menu'])
   }
 
