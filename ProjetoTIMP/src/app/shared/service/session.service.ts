@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
-
+import { Enviroment } from '../enviroment/enviroment'
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService {
-  ws: string = 'https://rotina-timp.azurewebsites.net/'
-  local: string = 'http://localhost:8080/'
+  enviroment: Enviroment = new Enviroment
+  ws: string = this.enviroment.ws
+  local: string = this.enviroment.local
+  //ws: string = 'http://localhost:8080/'
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -30,7 +32,6 @@ export class SessionService {
       "data_nasc": data,
       "email": email
     }
-    console.log(postData);
     return this.http.post(this.ws + 'user/post', postData);
   }
   limparSessao() {
@@ -39,9 +40,10 @@ export class SessionService {
   }
   criarSessao(dados: any) {
     let json = {
+      "id": dados.id,
       "nome": dados.nome,
       "email": dados.email,
-      "data_nasc":dados.data_nasc
+      "data_nasc": dados.data_nasc
     }
     sessionStorage.setItem('session', JSON.stringify(json));
     return this.obterNomeUsu()
@@ -62,6 +64,12 @@ export class SessionService {
     let sessao = this.obterSessao();
     if (sessao.email != null)
       return sessao.email
+    return null
+  }
+  obterIdUsuario() {
+    let sessao = this.obterSessao();
+    if (sessao.id != null)
+      return sessao.id
     return null
   }
   obterDataNascUsu() {
