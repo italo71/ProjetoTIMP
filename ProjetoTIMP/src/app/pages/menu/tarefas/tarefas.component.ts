@@ -23,28 +23,28 @@ export class TarefasComponent implements OnInit {
 
   getTarefas() {
     this.rest.obterTarefas().subscribe((data: any) => {
-      console.log(data)
       if (data.status == "success") {
         if (data.data.length != 0) {
           this.tarefas = []
           data.data.forEach((data: any) => {
             this.tarefas.push({ "titulo": data.titulo, "descricao": data.descricao, "data_criacao": data.data_criacao })
           });
+          this.rest.tarefasStorage(JSON.stringify(this.tarefas))
         }
       }
     })
   }
 
   abrirModal(titulo: string, descricao: string) {
-    console.log(titulo + '  ' + descricao);
     $('#staticBackdropLabel').text(titulo);
     $('#descricao_modal').text(descricao);
   }
 
-  addTarefa() {/* .replace(/ /g, '') */
+  addTarefa() {
     if (this.titulo.replace(/ /g, '') != '' || this.descricao.replace(/ /g, '') != '') {
-      this.rest.novaTarefa(this.titulo, this.descricao).subscribe((data: any) => {
-        console.log(data.status);
+      this.tarefas.push({ "titulo": this.titulo, "descricao": this.descricao, "data_criacao": new Date })
+      this.rest.tarefasStorage(JSON.stringify(this.tarefas))
+       this.rest.novaTarefa(this.titulo, this.descricao).subscribe((data: any) => {
         if (data.status == 'success') {
           this.titulo = '';
           this.descricao = '';
@@ -55,7 +55,7 @@ export class TarefasComponent implements OnInit {
             else
             clearInterval(timer)
           }, 5000);
-          this.getTarefas()
+
         }
       })
     }

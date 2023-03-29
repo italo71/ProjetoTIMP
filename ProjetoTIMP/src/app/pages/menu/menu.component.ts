@@ -24,8 +24,6 @@ export class MenuComponent implements OnInit {
     l = data.split('-')
     let r = ''
     for (let i = 0; i < 3; i++) {
-      console.log(l)
-      console.log(l[i])
       r = l[i] + '/' + r
     }
     r = r.slice(0, -1)

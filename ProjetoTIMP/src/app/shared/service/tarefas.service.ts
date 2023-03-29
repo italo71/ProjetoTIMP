@@ -15,7 +15,12 @@ export class TarefasService {
     private comunicate: CominucacaoService,
     private http: HttpClient,
   ) { }
-
+  tarefasStorage(tarefas: any) {
+    sessionStorage.setItem('tarefas', tarefas)
+  }
+  obterTarefasStorage(){
+    return sessionStorage.getItem('tarefas')
+  }
   novaTarefa(titulo: string, descricao: string) {
     let postData = {
       "id_usu": this.session.obterIdUsuario(),

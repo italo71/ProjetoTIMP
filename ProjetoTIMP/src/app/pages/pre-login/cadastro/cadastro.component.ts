@@ -32,7 +32,6 @@ export class CadastroComponent {
   registrar(){
     if(this.senha == this.confirmaSenha){
       this.session.cadastrar(this.nome,this.email,this.senha,this.data_nasc,this.login).subscribe((data:any)=>{
-        console.log(data);
         if(data.status == 'success'){
           this.router.navigate(['/login'])
         }
