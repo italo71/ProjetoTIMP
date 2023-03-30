@@ -33,12 +33,12 @@ export class TasksComponent {
     
   }
 
-  markDone(value: any) {
+  /* markDone(value: any) {
     value.completed = !value.completed
     value.completed === true ?
       this.taskList.push(this.taskList.splice(this.taskList.indexOf(value), 1)[0]) :
       this.taskList.unshift(this.taskList.splice(this.taskList.indexOf(value), 1)[0])
-  }
+  } */
   
   
 

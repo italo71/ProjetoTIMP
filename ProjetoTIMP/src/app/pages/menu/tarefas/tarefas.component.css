@@ -14,3 +14,59 @@ li {
     transition: all;
     transition-duration: 1s;
 }
+
+button {
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #0088ff;
+    transition: 0.8s;
+    align-items: center;
+}
+
+.btn_btn:hover {
+    background-color: #ff5100;
+    color: #ffffff;
+    border: none;
+
+}
+
+.cadastrar:hover {
+    background-color: #00ff1e;
+}
+
+.box_anotacao{
+    background-color: #00ff1e;
+    color: #ffffff;
+    transition: 0.8s;
+}
+
+
+.box_anotacao:hover{
+    background-color: #ff5100;
+    color: #ffffff;
+    border: none;
+}
+
+.butn_smt{
+    background-color: #00ff1e;
+    color: #ffffff;
+    transition: 0.8s;
+}
+.butn_smt:hover{
+    background-color: #ff5100;
+    color: #ffffff;
+    border: none;
+}
+.butn_smc{
+    background-color: #e02727;
+    color: #ffffff;
+    transition: 0.8s;
+}
+.butn_smc:hover{
+    background-color: #c40303;
+    color: #ffffff;
+    border: none;
+}

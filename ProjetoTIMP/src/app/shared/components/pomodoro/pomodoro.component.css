@@ -1,0 +1,31 @@
+.botao_p{
+    background-color: #00ff1e;
+    color: aliceblue;
+    border-radius: 30px;
+    height: 36px;
+    transition: 0.8s;
+}
+.botao_p:hover{
+    background-color: #ff5100;
+}
+
+.botao_r{
+    display: flex;
+    gap: 10px;
+}
+
+.botao_r button{
+    background-color: #ff5100;
+    color: aliceblue;
+    border-radius: 30px;
+    height: 48px;
+    transition: 0.8s;
+    border: none;
+}
+
+.botao_tem:hover{
+
+    background-color: #00ff1e;
+    color: aliceblue;
+    transform: scale(1.1);
+}

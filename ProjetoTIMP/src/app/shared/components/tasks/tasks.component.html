@@ -1,19 +1,42 @@
-<div class="mb-4 d-flex" style="gap: 32px;">
-    <form [formGroup]="newTodoForm" class="flex mt-4" (ngSubmit)="addTask()">
-        <input class="shadow appearance-none border rounded w-full p-2 mr-4 text-grey-darker" placeholder="Adicionar"
-            formControlName="todoItem">
-        <button type="submit"
-            class="btn btn-primary m-2">Adicionar
-        </button>
+<div class="mb-4" style="gap: 32px;">
+    <form [formGroup]="newTodoForm" class=" mt-4" (ngSubmit)="addTask()">
+        <div class="row">
+            <div class="col-10">
+                <input class="shadow appearance-none border rounded p-2  text-grey-darker" placeholder="Tarefas"
+                    formControlName="todoItem" style="width: 400px;" maxlength="50">
+            </div>
+            <div class="col-2">
+                <button type="submit"
+                    class="btn btn-primary btn-sm"><span class="material-symbols-outlined">
+                        add
+                        </span>
+                </button>
+            </div>
+        </div>
     </form>
 
 </div>
-<div>
-    <div class="flex mb-4 items-center" *ngFor="let value of taskList; index as i">
-        <p class="w-full text-grey-darkest" [ngClass]="{'line-through': value.completed}">{{value.name}}</p>
-        <button class="btn btn-primary m-2"
-            (click)="markDone(value)">Feito</button>
-        <button class="btn btn-primary"
-            (click)="removeTask(i)">Remover</button>
-    </div>
+
+<div class="col-12">
+    <table class="table table-dark  table-scroll table-striped">
+        <thead>
+            <tr>
+                <th>Tarefa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let value of taskList; index as i">
+                <td style="width: 400px;">
+                    <p class="w-full text-grey-darkest" [ngClass]="{'line-through': value.completed}">{{value.name}}</p>
+                </td>
+                <td>
+                <button class="btn btn-primary btn-sm btn_tabela"
+                    (click)="removeTask(i)"><span class="material-symbols-outlined">
+                        delete
+                        </span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

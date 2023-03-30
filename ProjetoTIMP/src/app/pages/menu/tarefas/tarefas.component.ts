@@ -72,4 +72,7 @@ export class TarefasComponent implements OnInit {
       })
     }
   }
+
+
+  
 }

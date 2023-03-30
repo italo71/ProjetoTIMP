@@ -1,23 +1,27 @@
 <div class="row">
-    <div style="margin-left: 100px;">
+    <div style="margin-left: 85px; margin-top: 27px;">
             <div class="wrapper d-flex flex-column align-items-center justify-content-start">
                 <div class="col-12">
                     <div class="d-flex flex-column align-items-center justify-content-center" style="max-width: 214px;">
                         <div class="d-flex flex-row mt-3 justify-content-between w-100">
-                            <button (click)="decreaseMinutes()" class="btn btn-primary btn-sm"><i class="material-symbols-outlined">
+                            <button (click)="decreaseMinutes()" class="btn botao_p btn-sm mt-2"><i class="material-symbols-outlined">
                                 remove
                             </i></button>
-                            <h1>{{ minutes }}:{{ seconds === 0 ? '00' : seconds }}</h1>
-                            <button (click)="increaseMinutes()" class="btn btn-primary btn-sm"><i class="material-symbols-outlined">
+                            <h1 style="color: aliceblue;">{{ minutes }}:{{ seconds === 0 ? '00' : seconds }}</h1>
+                            <button (click)="increaseMinutes()" class="btn botao_p btn-sm mt-2"><i class="material-symbols-outlined">
                                 add
                             </i></button>
                         </div>
-                        <div class="d-flex mt-3">
-                            <button (click)="startTimer()" class="btn btn-primary me-2">Começar</button>
-                            <button (click)="stopTimer()" class="btn btn-primary">Parar</button>
-                        </div>
-                        <div class="d-flex flex-column mt-3">
-                            <button (click)="restartTimer()" class="btn btn-primary">Recomeçar</button>
+                        <div class="d-flex mt-3 botao_r" >
+                            <button (click)="startTimer()" class="btn botao_tem"><span class="material-symbols-outlined">
+                                play_arrow
+                                </span></button>
+                            <button (click)="stopTimer()" class="btn botao_tem"><span class="material-symbols-outlined">
+                                pause
+                                </span></button>
+                            <button (click)="restartTimer()" class="btn botao_tem"><span class="material-symbols-outlined">
+                                replay
+                                </span></button>
                         </div>
                     </div>
                 </div>
