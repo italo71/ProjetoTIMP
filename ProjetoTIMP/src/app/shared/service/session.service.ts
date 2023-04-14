@@ -23,6 +23,13 @@ export class SessionService {
     }
     return this.http.post(this.ws + 'user/get', postData);
   }
+  vefiricaLogin(login: string) {
+    let postData = {
+      "type": "verifica",
+      "login":login
+    }
+    return this.http.post(this.ws + 'user/get', postData)
+  }
   cadastrar(nome: any, email: any, senha: any, data: any, login: any) {
     let postData = {
       "type": "cadastrar",

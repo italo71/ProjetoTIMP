@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CominucacaoService } from 'src/app/shared/service/cominucacao.service';
 import { SessionService } from 'src/app/shared/service/session.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private session: SessionService,
-    private router: Router
+    private router: Router,
+    private comu: CominucacaoService
   ) {
   }
 
@@ -30,11 +32,14 @@ export class LoginComponent implements OnInit {
   logar() {
     let login = this.resourceForm.get('login')?.value
     let senha = this.resourceForm.get('senha')?.value
+    this.comu.filter('loading');
     this.session.logar(login, senha).subscribe((data: any) => {
       if (data.status == 'success') {
-        this.session.criarSessao(data.data)
-        this.router.navigate(['/menu'])
+        this.session.criarSessao(data.data);
+        this.comu.filter('loaded');
+        this.router.navigate(['/menu']);
       }
+      this.comu.filter('loaded');
     })
   }
 }

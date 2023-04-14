@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand title" routerLink="/prelogin"><img src="../../../../assets/img/logo.png" class="logo"></a>
+        <a class="navbar-brand title" routerLink="/prelogin"><img src="../../../../assets/img/logo.png"
+                class="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +11,7 @@
 <div class="container-fluid">
     <div class="row" id="login-row">
         <div class="col-12" style="margin-bottom: 100px;">
-            <div class="d-flex justify-content-center mt-4 mb-4" id="login-column" >
+            <div class="d-flex justify-content-center mt-4 mb-4" id="login-column">
                 <div class="card" style="border-radius: 10px;width: 40rem; text-align: center;" id="login-box">
                     <div class="card-body">
                         <h4 style="color: aliceblue;">Cadastrar</h4>
@@ -18,52 +19,59 @@
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Usuário</label>
                                 <div class="col-11">
-                                    <input type="text" class="form-control" [(ngModel)]="login" id="exampleFormControlInput1"
-                                        placeholder="Usuário">
+                                    <input type="text" class="form-control" (change)="verificarLogin()"
+                                        [(ngModel)]="login" id="exampleFormControlInput1" placeholder="Usuário">
+                                    <span id="login-indisponivel" style="color: red;">Usuário indisponível</span>
                                 </div>
                             </div>
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                                 <div class="col-11">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="email"
-                                        placeholder="Nome@exemplo.com">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        [(ngModel)]="email" placeholder="Nome@exemplo.com">
                                 </div>
                             </div>
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Nome</label>
                                 <div class="col-11">
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="nome"
-                                        placeholder="Nome">
+                                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                                        [(ngModel)]="nome" placeholder="Nome">
                                 </div>
                             </div>
                             <div class="mb-1 row">
                                 <label for="inputPassword" class="form-label">Senha</label>
                                 <div class="col-sm-11">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha" [(ngModel)]="senha">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha"
+                                        [(ngModel)]="senha">
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="inputPassword" class="form-label">Confirme a Senha</label>
                                 <div class="col-sm-11">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Confirme a Senha" [(ngModel)]="confirmaSenha">
+                                    <input type="password" class="form-control" id="inputPassword"
+                                        placeholder="Confirme a Senha" [(ngModel)]="confirmaSenha">
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="inputPassword" class="form-label">Data de Nascimento</label>
                                 <div class="col-sm-11">
-                                    <input type="date" class="form-control" id="inputPassword" placeholder="Confirme a Senha" [(ngModel)]="data_nasc">
+                                    <input type="date" class="form-control" id="inputPassword"
+                                        placeholder="Confirme a Senha" [(ngModel)]="data_nasc">
                                 </div>
                             </div>
                             <div class="row d-flex row-column">
                                 <div class="col-5" style="margin-left: 20px;">
-                                    <button type="button"  style="margin-right: 15px;" class="cadastrar" (click)="registrar()">Cadastrar</button>
+                                    <button type="button" style="margin-right: 15px;" class="cadastrar"
+                                        (click)="registrar()">Cadastrar</button>
                                 </div>
                                 <div class="col-4">
-                                    <a routerLink="/prelogin"><button type="button" class="cancelar" routerLink="/">Cancelar</button></a>
+                                    <a routerLink="/prelogin"><button type="button" class="cancelar"
+                                            routerLink="/">Cancelar</button></a>
                                 </div>
                                 <div style="margin-left: -25px;">
                                     <div class="col-12 mt-4">
-                                        <legend class="d-flex justify-content-center"><a routerLink="/login">Já possui cadastro? Acesse aqui</a></legend>
+                                        <legend class="d-flex justify-content-center"><a routerLink="/login">Já possui
+                                                cadastro? Acesse aqui</a></legend>
                                     </div>
                                 </div>
                             </div>
@@ -73,22 +81,28 @@
             </div>
         </div>
     </div>
-    <footer class="text-center text-white">
-        <div class="row">
-            <div class="col-7 d-flex justify-content-start p-1" style="margin-left: 20px;">
-                <section class=" mt-2 mb-2 d-flex justify-content-start p-2" style="gap: 50px;">
-                    <a class="social-inner" href="https://www.facebook.com/PRSystems-102611902459043"
-                        target="_blank">Facebook</a>
-                    <a class="social-inner" href="https://www.instagram.com/" target="_blank">Intagram</a>
-                    <a class="social-inner" href="https://twitter.com/site_wizard" target="_blank">Twitter</a>
-                    <a class="social-inner" href="https://mail.google.com/mail/u/3/?ogbl#inbox"
-                        target="_blank">Google</a>
-                    <a class="social-inner" href="https://github.com/Clousbi/ProjetoTIMP" target="_blank">GitHub</a>
-                </section>
-            </div>
-            <div class=" col-4 d-flex mt-3 mb-2 justify-content-end">
-                © 2023 Copyright:
-                <a class="text-white" href="https://dailymanager.com/"> DailyManager.com</a>
-            </div>
+</div>
+<footer class="text-center text-white">
+    <div class="row">
+        <div class="col-7 d-flex justify-content-start p-1" style="margin-left: 20px;">
+            <section class=" mt-2 mb-2 d-flex justify-content-start p-2" style="gap: 50px;">
+                <a class="social-inner" href="https://www.facebook.com/PRSystems-102611902459043"
+                    target="_blank">Facebook</a>
+                <a class="social-inner" href="https://www.instagram.com/" target="_blank">Intagram</a>
+                <a class="social-inner" href="https://twitter.com/site_wizard" target="_blank">Twitter</a>
+                <a class="social-inner" href="https://mail.google.com/mail/u/3/?ogbl#inbox" target="_blank">Google</a>
+                <a class="social-inner" href="https://github.com/Clousbi/ProjetoTIMP" target="_blank">GitHub</a>
+            </section>
         </div>
-    </footer>
+        <div class=" col-4 d-flex mt-3 mb-2 justify-content-end">
+            © 2023 Copyright:
+            <a class="text-white" href="https://dailymanager.com/"> DailyManager.com</a>
+        </div>
+    </div>
+</footer>
+
+<div class="col-12 d-flex" style="vertical-align: middle; z-index: 99999; position: absolute;">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

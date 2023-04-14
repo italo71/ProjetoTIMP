@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CominucacaoService } from 'src/app/shared/service/cominucacao.service';
 import { SessionService } from 'src/app/shared/service/session.service';
 
 @Component({
@@ -13,9 +14,11 @@ export class MenuComponent implements OnInit {
   emailUsuario = this.session.obterEmailUsu();
   constructor(
     private session: SessionService,
+    private comu: CominucacaoService
   ) { }
 
   ngOnInit(): void {
+    this.comu.filter('loaded');
     this.formatarData(this.dataNasc)
   }
 

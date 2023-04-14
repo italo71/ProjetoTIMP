@@ -15,8 +15,7 @@
         </div>
     </nav>
 </header> -->
-
-<my-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"
+<my-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded= !sidebarExpanded"
     [style.display]="(showSideBar())?'block':'none'"></my-sidebar>
 <div class="content" [style.width]="(sidebarExpanded)?'calc(100% - 150px)':'calc(100% - 60px)'"
     [style.margin-left]="(sidebarExpanded)?'150px':'60px'" style="padding: 15px;"
@@ -25,9 +24,13 @@
         <router-outlet></router-outlet>
     </div>
 </div>
-
-
-
+<div class="modal d-flex hide" style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.4);" id="loading">
+    <div class="col-12 d-flex justify-content-center">
+        <div class="spinner-border" role="status" style="margin: auto;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
 
 
 <!-- <footer class="section footer-classic context-dark bg-image" style="background: #25274D;">
