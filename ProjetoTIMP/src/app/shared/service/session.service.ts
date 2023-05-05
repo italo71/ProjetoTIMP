@@ -26,7 +26,7 @@ export class SessionService {
   vefiricaLogin(login: string) {
     let postData = {
       "type": "verifica",
-      "login":login
+      "login": login
     }
     return this.http.post(this.ws + 'user/get', postData)
   }
@@ -54,6 +54,12 @@ export class SessionService {
     }
     sessionStorage.setItem('session', JSON.stringify(json));
     return this.obterNomeUsu()
+  }
+  sessaoAtiva() {
+    let a: any = JSON.parse(this.obterSessao())
+    if (a.id)
+      return true
+    return false
   }
   obterSessao() {
     let session = sessionStorage.getItem('session');

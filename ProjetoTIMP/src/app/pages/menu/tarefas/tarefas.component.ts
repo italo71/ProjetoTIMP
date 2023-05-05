@@ -21,6 +21,7 @@ export class TarefasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.session.obterSessao())
     if (this.session.obterSessao() == null)
       this.getTarefas();
     else {
@@ -36,6 +37,7 @@ export class TarefasComponent implements OnInit {
 
   getTarefas() {
     this.rest.obterTarefas().subscribe((data: any) => {
+      console.log(data)
       if (data.status == "success") {
         if (data.data.length != 0) {
           this.tarefas = []

@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.comu.filter('loaded');
-    this.formatarData(this.dataNasc)
+    this.formatarData(this.dataNasc);
   }
 
   formatarData(data: any) {
