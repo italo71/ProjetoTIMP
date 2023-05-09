@@ -23,7 +23,6 @@ export class MenuComponent implements OnInit {
   }
 
   formatarData(data: any) {
-    console.log(data)
     if (!data)
       return 'Não Informado'
     let l = new Array;

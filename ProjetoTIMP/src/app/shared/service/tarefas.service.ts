@@ -18,8 +18,13 @@ export class TarefasService {
   tarefasStorage(tarefas: any) {
     sessionStorage.setItem('tarefas', tarefas)
   }
-  obterTarefasStorage(){
-    return sessionStorage.getItem('tarefas')
+  limparTarefas() {
+    sessionStorage.removeItem('tarefas');
+  }
+  obterTarefasStorage() {
+    if (sessionStorage.getItem('tarefas') != null)
+      return sessionStorage.getItem('tarefas');
+    return null;
   }
   novaTarefa(titulo: string, descricao: string) {
     let postData = {
@@ -27,7 +32,16 @@ export class TarefasService {
       "titulo": titulo,
       "descricao": descricao
     }
-    return this.http.post(this.ws + 'tarefas', postData)
+    return this.http.post(this.ws + 'tarefas', postData);
+  }
+
+  apagarTarefa(id_tarefa: number) {
+    let postData = {
+      "id_usu": this.session.obterIdUsuario(),
+      "type": "DELETE",
+      "id_tarefa": id_tarefa
+    };
+    return this.http.post(this.ws + 'tarefas', postData);
   }
 
   obterTarefas() {

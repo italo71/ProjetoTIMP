@@ -21,7 +21,6 @@ export class AppComponent {
         $('#loading').removeClass('hide');
       }
       if (m == 'loaded') {
-        console.log('entrou')
         $('#loading').addClass('hide');
       }
     })

@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { SessionService } from 'src/app/shared/service/session.service';
 import { Component, OnInit } from '@angular/core';
 import { CominucacaoService } from 'src/app/shared/service/cominucacao.service';
@@ -21,8 +22,7 @@ export class TarefasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.session.obterSessao())
-    if (this.session.obterSessao() == null)
+    if (this.rest.obterTarefasStorage() == null)
       this.getTarefas();
     else {
       let t = this.rest.obterTarefasStorage()
@@ -37,12 +37,12 @@ export class TarefasComponent implements OnInit {
 
   getTarefas() {
     this.rest.obterTarefas().subscribe((data: any) => {
-      console.log(data)
       if (data.status == "success") {
+        this.rest.limparTarefas();
         if (data.data.length != 0) {
           this.tarefas = []
           data.data.forEach((data: any) => {
-            this.tarefas.push({ "titulo": data.titulo, "descricao": data.descricao, "data_criacao": data.data_criacao })
+            this.tarefas.push({ "titulo": data.titulo, "descricao": data.descricao, "data_criacao": data.data_criacao, "id": data.id });
           });
           this.rest.tarefasStorage(JSON.stringify(this.tarefas))
         }
@@ -50,9 +50,34 @@ export class TarefasComponent implements OnInit {
     })
   }
 
-  abrirModal(titulo: string, descricao: string) {
+  abrirModal(titulo: string, descricao: string, id: any) {
     $('#staticBackdropLabel').text(titulo);
     $('#descricao_modal').text(descricao);
+    $('#controle_tarefa').text(id);
+  }
+
+  apagaTarefa() {
+    let id = $('#controle_tarefa').text()
+    if (id == null || id == '')
+      return
+
+    this.rest.apagarTarefa(parseInt(id)).subscribe((data: any) => {
+      console.log(data)
+      if (data.status == 'seccess') {
+        for (let i = 0; i < this.tarefas.length; i++) {
+          if (this.tarefas[i].id == id) {
+            this.tarefas.splice(i, 1);
+            this.rest.tarefasStorage(this.tarefas);
+            console.log(this.tarefas);
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  closeModalTarefa() {
+    $('#controle_tarefa').text('');
   }
 
   addTarefa() {
@@ -76,5 +101,5 @@ export class TarefasComponent implements OnInit {
   }
 
 
-  
+
 }
