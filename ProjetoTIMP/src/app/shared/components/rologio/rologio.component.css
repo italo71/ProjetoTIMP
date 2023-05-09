@@ -4,7 +4,7 @@
     margin: 50px auto 0;
     width: 200px;
     height: 200px;
-    background-color: #202020;
+    background-color: #ff8000;
     border-radius: 50%;
     margin-bottom: 90px;
 }
@@ -18,15 +18,15 @@
 }
 
 .hour {
-    background-color: #1aff00;
+    background-color: #202020;
 }
 
 .minute {
-    background-color: #00a2ff;
+    background-color: #202020;
 }
 
 .second {
-    background-color: #ff5900;
+    background-color: #202020;
 }
 
 .center-circle {
@@ -36,15 +36,16 @@
     transform: translate3d(-50%, -50%, 0);
     width: 12px;
     height: 12px;
-    background-color: #E7E7E7;
+    background-color: #202020;
     border-radius: 50%;
 }
 
 .digital-clock {
     position: absolute;
-    top: 260px;
-    left: 20%;
+    top: 230px;
+    left: 50%;
     transform: translate3d(-50%, 0, 0);
     font-size: 2em;
     font-family: 'Source Sans Pro', sans-serif;
+    color: aliceblue;
 }

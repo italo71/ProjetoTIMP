@@ -2,25 +2,57 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-center mt-4 mb-4">
-                <div class="card" style="width: 1000px; height: 500px;border: 1px solid #ff8000; background-color: #ff8000;">
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="m-3">
-                                <app-rologio></app-rologio>
-                                <div class="card m-3 d-flex justify-content-center">
-                                    <p>Lembrete da agenda</p>
+                <div class="card" style="width: 1000px; height: 500px;border: 1px solid #202020; background-color: #202020;">
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-5 mt-4">
+                            <div class="card card-relogio">
+                                <div class="m-3">
+                                    <app-rologio></app-rologio>
                                 </div>
                             </div>
                         </div>
                         <div class="col-7">
                             <div class="mt-3 mb-2 p-2 m-3">
-                                <h2 style="color: aliceblue;">Bem-vindo {{nomeUsuario}}!</h2>
+                                <h2 style="color: aliceblue; text-align: center;">Bem-vindo {{nomeUsuario}}!</h2>
                                 <hr>
-                                <div class="card m-3">
-                                    <p>tempo/clima</p>
-                                </div>
                             </div>
+                            <div class="card card-dias">
+                                <div class="row">
+                                    <div class="d-flex justify-content-center mt-3 mb-3">
+                                        <div class="col-10">
+                                            <div class="card" style="background-color:#ffffff">
+                                                <span  class="d-flex justify-content-center mt-2 mb-2" style="color: black;">
+                                                    data <!-- {{data}} -->
+                                                </span>
 
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="d-flex justify-content-center mt-3" style="gap: 15px;">
+                                        <div class="col-5">
+                                            <div class="card" style="background-color:#1eff00; height: 200px; color: white;">
+                                                <span  class="d-flex justify-content-center mt-2 mb-2" >
+                                                    data <!-- {{data}} -->
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="card" style="background-color:#1eff00; height: 200px; color: white;">
+                                                <span  class="d-flex justify-content-center mt-2 mb-2" >
+                                                    data <!-- {{data}} -->
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>
@@ -37,42 +69,33 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-4 mb-4">
-                <div class="card" style="width: 1000px; height: 300px; background-color: #ff8000;">
+                <div class="card" style="width: 1000px; height: 200px; background-color: #202020;">
                     <div class="row">
-                        <div class="col-5">
-                            <div class="card m-3">
+                        <div class="col-7">
+                            <div class="card m-3 card-perfil">
                                 <div class="m-2">
                                     <div class="row">
-                                        <img src="" alt="Foto de perfil">
-                                        <h6>{{nomeUsuario}}</h6>
+                                        <span> Usuário: {{nomeUsuario}}</span>
+                                        
                                         <span id="dateNasc">
                                             Data de nascimento: {{dataNasc}}
                                         </span>
                                         <span id="email">
-                                            {{emailUsuario}}
+                                            Email: {{emailUsuario}}
                                         </span>
                                     </div>
-                                    <button type="submit" class=" btn btn-warning m-3 mb-2">
-                                        Editar Perfil
-                                    </button>
+                                    
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class=" btn btn-warning m-3 mb-2" routerLink="/perfil" style="background-color:#1eff00; color:
+                                white; border: none;">
+                                    Editar Perfil
+                                </button>
                             </div>
                         </div>
-                        <div class="col-7">
-                            <div class="card m-3 mb-2">
-                                <div class="m-2">
-                                    <span>
-                                        Indicador 1
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="card m-3 mb-2">
-                                <div class="m-2">
-                                    <span>
-                                        Indicador 2
-                                    </span>
-                                </div>
-                            </div>
+                        <div class="col-4 d-flex justify-content-end mt-4">
+                            <img src="./../../../assets/img/download.jpg" alt="Foto de perfil">
                         </div>
                     </div>
                 </div>
