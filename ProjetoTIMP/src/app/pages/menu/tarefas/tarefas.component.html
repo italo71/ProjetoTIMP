@@ -20,7 +20,7 @@
                         </div>
                         <div class="d-grid gap-2 m-3">
                             <button class="btn btn_btn
-                            " (click)="addTarefa()" type="button">Salvar</button>
+                                " (click)="addTarefa()" type="button">Salvar</button>
                         </div>
                         <div class="col-12 d-flex justify-content-center" id="alert">
                             <span id="message"></span>
@@ -38,8 +38,8 @@
                         style="width: 500px; height: 500px; border: 1px solid #000000; background-color: #202020; z-index: 9999;">
                         <label class="p-3" style="color: aliceblue; font-size: 20px;">Anotações</label>
                         <ul style="max-height: 500px; overflow-y: auto; overflow-x: hidden;">
-                            <li *ngFor="let tarefa of tarefas" (click)="abrirModal(tarefa.titulo, tarefa.descricao)"
-                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <li *ngFor="let tarefa of tarefas" (click)="abrirModal(tarefa.titulo, tarefa.descricao, tarefa.id)"
+                                data-bs-toggle="modal" data-bs-target="#staticBackdrop" [id]="'tarefa_'+tarefa.id">
                                 <a type="button" class="btn m-3 p-3 box_anotacao" style="width: calc(100% - 30px);">
                                     <div class="row">
                                         <div class="col-7">
@@ -65,9 +65,9 @@
                                     <div class="modal-header" style="height: 45px;">
                                         <h5 class="modal-title" id="staticBackdropLabel"></h5>
                                         <div class="d-flex justify-content-end" style="gap: 3px;">
-                                            <button class="btn butn_smt btn-sm"><span
+                                            <button class="btn butn_smt btn-sm" (click)="apagaTarefa()"><span
                                                     class="material-symbols-outlined">delete</span></button>
-                                            <button type="button" class="btn butn_smc btn-sm" data-bs-dismiss="modal"
+                                            <button type="button" class="btn butn_smc btn-sm" data-bs-dismiss="modal" (click)="closeModalTarefa()"
                                                 aria-label="Close"><span
                                                     class="material-symbols-outlined">close</span></button>
                                         </div>
@@ -99,7 +99,7 @@
                     <div class="card shadow p-3"
                         style="width: 500px; height: 320px; border: none; background-color: #202020;">
                         <div class="row">
-                    
+
                             <div class="col-12">
                                 <app-tasks></app-tasks>
                             </div>
@@ -111,3 +111,5 @@
         </div>
     </div>
 </div>
+
+<input type="hidden" id="controle_tarefa">
