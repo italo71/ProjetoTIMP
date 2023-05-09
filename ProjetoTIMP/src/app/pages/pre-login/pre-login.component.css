@@ -15,10 +15,10 @@ a:hover {
     transition: 0.5s;
     transform: translateX(0) scale(1);
 }
-.card:hover, .card:focus{
+/* .card:hover, .card:focus{
     transform: translateX(5px) scale(1.1);
     
-}
+} */
 
 .title {
     position: absolute;

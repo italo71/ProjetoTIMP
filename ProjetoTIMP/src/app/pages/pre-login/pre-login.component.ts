@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pre-login',
   templateUrl: './pre-login.component.html',
   styleUrls: ['./pre-login.component.css']
 })
-export class PreLoginComponent {
-
+export class PreLoginComponent implements OnInit{
+  constructor(){}
+  ngOnInit(): void {
+    $('.lineBar').css('display' , 'none !important')
+  }
 }

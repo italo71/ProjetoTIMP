@@ -17,7 +17,7 @@
 </header> -->
 <my-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded= !sidebarExpanded"
     [style.display]="(showSideBar())?'block':'none'"></my-sidebar>
-<div class="content" [style.width]="(sidebarExpanded)?'calc(100% - 150px)':'calc(100% - 60px)'"
+<div class="content lineBar" [style.width]="(sidebarExpanded)?'calc(100% - 150px)':'calc(100% - 60px)'"
     [style.margin-left]="(sidebarExpanded)?'150px':'60px'" style="padding: 15px;"
     [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
     <div [style.width]="" [style.margin-left]="">
