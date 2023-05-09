@@ -1,5 +1,50 @@
+<div class="row mt-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-10">
+            <div class="card card-meta p-3">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título:</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Título" style="background-color: rgb(96, 15, 189); color: white; border: none;">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="data_i" class="form-label">Data de Inicio:</label>
+                            <input type="date" class="form-control" id="data_i" placeholder="Data de Inicio" style="background-color: #ff8000; color: white; border: none;">
+                        </div>
 
-<my-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></my-sidebar>
-<div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
-    <router-outlet></router-outlet>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Descrição:</label>
+                            <textarea class="form-control" id="descricao" rows="3" style="max-height: 150px; min-height: 150px; background-color: rgb(20, 20, 20); color: white; border: none;" ></textarea>
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="data_f" class="form-label">Data Final:</label>
+                            <input type="date" class="form-control" id="data_f" placeholder="Data Final" style="background-color: #ff8000; color: white; border: none;">
+                        </div>
+                        <button class="btn" style="margin-left: 40%; background-color: rgb(15, 163, 189); color: white; border: none;" >Salvar</button>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card card-meta">
+                            <div *ngFor="let dados of metas">
+                                <span style="background-color: #1eff00; color: white;">{{dados.titulo}}   | {{dados.data_i}} |  {{dados.data_f}}  </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
