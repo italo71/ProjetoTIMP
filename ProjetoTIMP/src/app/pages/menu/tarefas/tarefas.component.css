@@ -5,6 +5,10 @@ li {
     padding: 0;
 }
 
+#loading_tarefas{
+    position: absolute;
+}
+
 #btn-refresh {
     transition: all;
     transition-duration: 1s;

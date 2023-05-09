@@ -40,14 +40,14 @@ export class TarefasComponent implements OnInit {
       if (data.status == "success") {
         this.rest.limparTarefas();
         if (data.data.length != 0) {
-          this.tarefas = []
+          this.tarefas = [];
           data.data.forEach((data: any) => {
             this.tarefas.push({ "titulo": data.titulo, "descricao": data.descricao, "data_criacao": data.data_criacao, "id": data.id });
           });
-          this.rest.tarefasStorage(JSON.stringify(this.tarefas))
+          this.rest.tarefasStorage(JSON.stringify(this.tarefas));
         }
       }
-    })
+    });
   }
 
   abrirModal(titulo: string, descricao: string, id: any) {
@@ -57,10 +57,9 @@ export class TarefasComponent implements OnInit {
   }
 
   apagaTarefa() {
-    let id = $('#controle_tarefa').text()
+    let id = $('#controle_tarefa').text();
     if (id == null || id == '')
-      return
-
+      return;
     this.rest.apagarTarefa(parseInt(id)).subscribe((data: any) => {
       console.log(data)
       if (data.status == 'seccess') {
