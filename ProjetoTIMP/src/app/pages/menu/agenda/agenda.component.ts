@@ -24,7 +24,7 @@ import {
   SchedulerEventTimesChangedEvent,
   CalendarSchedulerViewComponent
 } from 'angular-calendar-scheduler';
-import { AppService } from 'src/app/app.service';
+import {AgendaService} from './agenda.service'
 
 @Component({
   selector: 'app-agenda',
@@ -33,7 +33,7 @@ import { AppService } from 'src/app/app.service';
   providers: [{
     provide: CalendarDateFormatter,
     useClass: SchedulerDateFormatter
-  }]
+  }] 
 })
 export class AgendaComponent implements OnInit {
   day:number;
@@ -87,7 +87,7 @@ export class AgendaComponent implements OnInit {
 
   @ViewChild(CalendarSchedulerViewComponent) calendarScheduler: CalendarSchedulerViewComponent;
 
-  constructor(@Inject(LOCALE_ID) locale: string, private appService: AppService, private dateAdapter: DateAdapter) {
+  constructor(@Inject(LOCALE_ID) locale: string, private agendaService: AgendaService, private dateAdapter: DateAdapter) {
     this.locale = locale;
 
     // this.dayModifier = ((day: SchedulerViewDay): void => {
@@ -110,7 +110,7 @@ export class AgendaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appService.getEvents(this.actions)
+    this.agendaService.getEvents(this.actions)
       .then((events: CalendarSchedulerEvent[]) => this.events = events);
   }
 
