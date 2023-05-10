@@ -8,7 +8,7 @@ import { SessionService } from 'src/app/shared/service/session.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  sidebarExpanded = true;
+  sidebarExpanded = false;
   dataNasc = this.formatarData(this.session.obterDataNascUsu());
   nomeUsuario = this.session.obterNomeUsu();
   emailUsuario = this.session.obterEmailUsu();
