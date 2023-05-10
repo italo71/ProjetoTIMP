@@ -1,47 +1,33 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="container">
-                    <div class="blocoNotas">
-                        <h1>Bloco de Notas</h1>
-                        <form action="">
-                            <input type="text" id="note-title" placeholder="Título">
-                            <textarea id="note-text" placeholder="Anotação"></textarea>
-                            <button id="add-btn">Adicionar</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="container">
-                    <h2>Anotações</h2>
-                    <hr>
-                    <div id="notes1">
-
-                        <div class="note">
-                            <p class="note-counter">Note</p>
-                            <h3 class="note-title">title </h3>
-                            <p class="note-text">text</p>
-                            <button class="note-btn">Deletar</button>
-                            <button class="notr-btn edit-btn">Editar</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <h5 class="card-title" style="margin-top: 1%; margin-left: 2%;">Calendário</h5>
-                <div class="wrapper">
-                    <div id="calendari">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<select #viewDayOptionSelect class="form-select" [ngModel]="viewDays" (change)="viewDaysOptionChanged(day)">
+    <option [value]="1" [(ngModel)]="day">One day</option>
+    <option [value]="3" [(ngModel)]="day">Three days</option>
+    <option [value]="7" [(ngModel)]="day">One week</option>
+</select>
+...
+<calendar-scheduler-view *ngSwitchCase="CalendarView.Week"
+                    [viewDays]="viewDays"
+                    [viewDate]="viewDate"
+                    [events]="events"
+                    [locale]="locale"
+                    [responsive]="true"
+                    [weekStartsOn]="weekStartsOn"
+                    [excludeDays]="excludeDays"
+                    [startsWithToday]="startsWithToday"
+                    [hourSegments]="hourSegments"
+                    [dayStartHour]="dayStartHour"
+                    [dayEndHour]="dayEndHour"
+                    [dayModifier]="dayModifier"
+                    [hourModifier]="hourModifier"
+                    [segmentModifier]="segmentModifier"
+                    [eventModifier]="eventModifier"
+                    [showEventActions]="true"
+                    [showSegmentHour]="true"
+                    [zoomEventOnHover]="true"
+                    (viewDaysChanged)="viewDaysChanged($event)"
+                    (dayHeaderClicked)="dayHeaderClicked($event.day)"
+                    (hourClicked)="hourClicked($event.hour)"
+                    (segmentClicked)="segmentClicked('Clicked', $event.segment)"
+                    (eventClicked)="eventClicked('Clicked', $event.event)"
+                    (eventTimesChanged)="eventTimesChanged($event)"
+                    [refresh]="refresh">
+</calendar-scheduler-view>
