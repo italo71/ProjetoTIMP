@@ -30,14 +30,13 @@ import {AgendaService} from './agenda.service'
   selector: 'app-agenda',
   templateUrl: './agenda.component.html',
   styleUrls: ['./agenda.component.css'],
-  providers: [{
+  /* providers: [{
     provide: CalendarDateFormatter,
     useClass: SchedulerDateFormatter
-  }] 
+  }]  */
 })
 export class AgendaComponent implements OnInit {
   day:number;
-  sidebarExpanded = true;
   title: string = 'Angular Calendar Scheduler Demo';
 
   CalendarView = CalendarView;

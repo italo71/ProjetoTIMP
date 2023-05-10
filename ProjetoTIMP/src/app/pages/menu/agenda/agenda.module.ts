@@ -12,6 +12,8 @@ import { SchedulerModule } from 'angular-calendar-scheduler';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './../../../shared/interceptor.service';
 
 registerLocaleData(localeIt);
 import * as moment from 'moment';
@@ -28,10 +30,10 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CalendarModule.forRoot({
+    /* CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    }),
+    }), */
     SchedulerModule.forRoot({ locale: 'pt', headerDateFormat: 'daysRange' })
   ],
   exports: [
