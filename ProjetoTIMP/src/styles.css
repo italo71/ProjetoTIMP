@@ -5,3 +5,13 @@
 .hide {
     display: none !important;
 }
+
+.f-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.f-row{
+    display: flex;
+    flex-direction: row;
+}

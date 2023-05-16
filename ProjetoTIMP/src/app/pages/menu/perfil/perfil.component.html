@@ -1,4 +1,54 @@
-<my-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></my-sidebar>
-<div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
-    <router-outlet></router-outlet>
+<div class="content">
+    <div class="col-12 d-flex card" style="align-items: center; height: 100%;">
+        <div class="col-12 d-flex row f-row">
+            <div class="col-6 d-flex row mt-3 mb-3">
+                <span>Informações Pessoais</span>
+                <div class="col-12 d-flex f-col">
+                    <label class="form-label" for="nome">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" id="nome" [(ngModel)]="nome">
+                </div>
+                <div class="col-12 d-flex f-col">
+                    <label class="form-label" for="nome">Email</label>
+                    <input type="text" class="form-control" placeholder="Email" id="Email" [(ngModel)]="email">
+                </div>
+                <div class="col-12 d-flex f-col">
+                    <label class="form-label" for="nome">Data Nascimento</label>
+                    <input type="text" class="form-control" placeholder="Data Nascimento" id="dataNasc" [(ngModel)]="dataNasc">
+                </div>
+                <hr class="mt-3 col-11" style="margin-left: 25px;">
+                <div class="mt-1">
+                    <span style="border-bottom: 1px solid lightgray;"><strong>Redefinir Senha</strong></span>
+                    <div class="col-12 d-flex f-col mt-2">
+                        <label class="form-label" for="nome">Senha atual</label>
+                        <input type="text" class="form-control" placeholder="Senha Atual" id="senhaA" [(ngModel)]="senhaAtual" (change)="">
+                    </div>
+                    <div class="col-12 d-flex f-col mt-1">
+                        <label class="form-label" for="nome">Nova Senha</label>
+                        <input type="text" class="form-control" placeholder="Senha Nova" id="senhaN" [disabled]="!senhaCorreta" [(ngModel)]="senhaNova1">
+                    </div>
+                    <div class="col-12 d-flex f-col mt-1">
+                        <label class="form-label" for="nome">Repita a senha</label>
+                        <input type="text" class="form-control" placeholder="Repita a senha" [disabled]="!senhaCorreta" id="senhaR" [(ngModel)]="senhaNova2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex row mt-3 mb-3">
+                <div class="col-12 d-flex row">
+                    <span>Foto de Perfil</span>
+                    <div class="col-12 d-flex">
+                        <label for="picture__input" tabIndex="0">
+                            <span class="picture__image img-fluid"></span>
+                        </label>
+                        <input type="file" name="picture__input" class="img-fluid" id="picture__input" (change)="enviarImagem()">
+                    </div>
+                    <div class="col-12 d-flex row">
+                        <div class="logoMarca text-center">
+                            <img src="{{logo}}" style="display: none; cursor: pointer;" *ngIf="logo != null"
+                                class="img-fluid d-flex" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
