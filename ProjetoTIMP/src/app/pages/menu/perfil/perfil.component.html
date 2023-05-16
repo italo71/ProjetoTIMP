@@ -20,7 +20,7 @@
                     <span style="border-bottom: 1px solid lightgray;"><strong>Redefinir Senha</strong></span>
                     <div class="col-12 d-flex f-col mt-2">
                         <label class="form-label" for="nome">Senha atual</label>
-                        <input type="text" class="form-control" placeholder="Senha Atual" id="senhaA" [(ngModel)]="senhaAtual" >
+                        <input type="text" class="form-control" placeholder="Senha Atual" id="senhaA" [(ngModel)]="senhaAtual" (change)="digitaSenha()">
                     </div>
                     <div class="col-12 d-flex f-col mt-1">
                         <label class="form-label" for="nome">Nova Senha</label>

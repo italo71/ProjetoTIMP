@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from 'src/app/shared/service/session.service';
 
 @Component({
   selector: 'app-perfil',
@@ -16,18 +17,20 @@ export class PerfilComponent {
   senhaNova1:any = null;
   senhaNova2:any = null;
   sidebarExpanded = true;
-  constructor() { }
+  constructor(
+    private session:SessionService,
+  ) { }
 
   enviarImagem() { //envia a imagem 
     let imagem:any = document.getElementById('picture__input');
     imagem = imagem.files;
     var carregarImagem = imagem[0];
+    
     const lerArquivo: FileReader = new FileReader();
     lerArquivo.onload = (fileCarregado:any) => {
       var imagemBase64 = fileCarregado.target.result;
-      this.logo = imagemBase64
+      this.logo = imagemBase64;
     }
-    console.log(lerArquivo.readAsDataURL(carregarImagem))
     lerArquivo.readAsDataURL(carregarImagem);
   };
 
