@@ -47,7 +47,6 @@ export class MetasComponent implements OnInit {
         }
       }
     }
-
     if (this.titulo && this.descricao && this.dataInicio && this.dataFinal) {
       this.salvando = true;
       this.rest.cadastrarAlterarMeta(this.titulo, this.limpaString(this.descricao), this.dataInicio, this.dataFinal, this.idMeta).subscribe((data: any) => {
@@ -55,10 +54,10 @@ export class MetasComponent implements OnInit {
           this.alert.success('Alteração Salva com Sucesso');
           console.log(data.data.length);
           if (data.data.length > 0) {
-            console.log(data.data[0]);
             this.metas.push(data.data[0]);
           }
         }
+        else { this.alert.erro("Erro ao salvar alteração! Tente novamente"); }
         this.salvando = false;
       });
     }
@@ -102,8 +101,6 @@ export class MetasComponent implements OnInit {
     }
   }
 
-  /* 
-   */
   limpaString(s: any) {
     return s.replace(/'/g, '')
   }
