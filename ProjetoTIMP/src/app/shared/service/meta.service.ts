@@ -18,6 +18,15 @@ export class MetaService {
     private session: SessionService
   ) { }
 
+  metasStorage(metas: any) {
+    sessionStorage.setItem('metas',JSON.stringify(metas));
+  }
+
+  obterMetasStorage(){
+    let metas:any = sessionStorage.getItem('metas');
+    return JSON.parse(metas);
+  }
+
   cadastrarAlterarMeta(titulo: any, meta: any, dataInicio: any, dataFinal: any, idMeta: any = null) {
     let postData = {
       "method": idMeta ? "PUT" : "POST",

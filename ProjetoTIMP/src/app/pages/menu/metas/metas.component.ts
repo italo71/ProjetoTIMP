@@ -15,6 +15,9 @@ export class MetasComponent implements OnInit {
   //controle
   idMeta: any = null;
   salvando: boolean = false;
+  d_btn: boolean = false;
+  carregando: boolean = false;
+  alertLoaded: boolean = false;
   //ngModels
   titulo: any = null;
   descricao: any = null;
@@ -26,14 +29,21 @@ export class MetasComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
-    this.rest.obterMetasCadastradas().subscribe((data: any) => {
-      if (data.status == 'success') {
-        data.data.forEach((e: any) => {
-          this.metas.push(e);
-        });
-      }
-    })
+    this.carregando = true;
+    console.log(this.rest.obterMetasStorage())
+    let metas = this.rest.obterMetasStorage()
+    if (metas == null)
+      this.refresh();
+    else {
+      this.metas = metas;
+      this.carregando = false;
+    }
   }
+
+  apareceBtn() {
+    this.d_btn = !this.d_btn
+  }
+
   salvarAlteracoes() {
     if (this.salvando)
       return;
@@ -99,6 +109,27 @@ export class MetasComponent implements OnInit {
         return;
       }
     }
+  }
+
+  refresh() {
+    let mReserva = this.metas;
+    this.metas = [];
+    this.carregando = true;
+    this.rest.obterMetasCadastradas().subscribe((data: any) => {
+      if (data.status == 'success') {
+        data.data.forEach((e: any) => {
+          this.metas.push(e);
+        });
+        this.carregando = false;
+        this.rest.metasStorage(this.metas);
+      }
+      else { this.metas = mReserva; }
+      this.alertLoaded = true;
+      let i = setInterval(() => {
+        this.alertLoaded = false;
+        clearInterval(i);
+      }, 1000)
+    });
   }
 
   limpaString(s: any) {
