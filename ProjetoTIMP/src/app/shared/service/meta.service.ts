@@ -40,4 +40,12 @@ export class MetaService {
     }
     return this.http.post(this.ws + 'meta', postData);
   }
+
+  apagarMeta(metaID: any) {
+    let postData = {
+      "method": "DELETE",
+      "metaID": metaID
+    }
+    return this.http.post(this.ws + 'meta', postData);
+  }
 }

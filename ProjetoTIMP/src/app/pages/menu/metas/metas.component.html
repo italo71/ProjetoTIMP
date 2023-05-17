@@ -33,19 +33,31 @@
                                 style="background-color: #ff8000; color: white; border: none;">
                         </div>
                         <div class="col-12 d-flex row justify-content-center f-row">
-                            <button class="btn" style="background-color: rgb(15, 163, 189); color: white; border: none; width: 80px; margin-right: 5px;"
-                                (click)="salvarAlteracoes()">Salvar</button>
+                            <button class="btn" style="background-color: rgb(15, 163, 189); color: white; border: none; width: 80px; margin-right:
+                                5px;"
+                                (click)="salvarAlteracoes()">{{salvando?'':'Salvar'}}
+                                <div class="spinner-border" role="status" style="width: 20px; height: 20px;" *ngIf="salvando">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                            <button class="btn" style="background-color: rgb(186, 189, 15); color: white; border: none; width: 90px;margin-right:
+                                5px;"
+                                (click)="limparCampos()">{{(idMeta == null?'Limpar':'Cancelar')}}
+
+                            </button>
                             <button class="btn" style="background-color: rgb(189, 70, 15); color: white; border: none; width: 90px;"
-                                (click)="limparCampos()">Limpar</button>
+                                (click)="apagarMeta()" *ngIf="idMeta != null">Excluir</button>
                         </div>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-12">
-                        <div class="card card-meta">
-                            <div *ngFor="let dados of metas" (click)="abrirMeta(dados.id)" style="cursor: pointer;">
-                                <span style="background-color: #1eff00; color: white;">{{dados.titulo}} | {{formataData(dados.data_inicio)}} |
-                                    {{formataData(dados.data_final)}} </span>
+                        <div class="card card-meta metas-listagem">
+                            <div *ngFor="let dados of metas" class="col-3" (click)="abrirMeta(dados.id)" style="cursor: pointer; padding: 5px;">
+                                <div class="col-12 meta">
+                                    <span style="background-color: #1eff00; color: white;">{{dados.titulo}} | {{formataData(dados.data_inicio)}} |
+                                        {{formataData(dados.data_final)}} </span>
+                                </div>
                             </div>
                         </div>
                     </div>

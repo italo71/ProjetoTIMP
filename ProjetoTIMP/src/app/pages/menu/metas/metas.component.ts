@@ -14,6 +14,7 @@ export class MetasComponent implements OnInit {
   meta: object = {};
   //controle
   idMeta: any = null;
+  salvando: boolean = false;
   //ngModels
   titulo: any = null;
   descricao: any = null;
@@ -34,20 +35,57 @@ export class MetasComponent implements OnInit {
     })
   }
   salvarAlteracoes() {
+    if (this.salvando)
+      return;
     if (this.idMeta) {
       for (let i = 0; i < this.metas.length; i++) {
         if (this.metas[i].id == this.idMeta) {
-          if (this.metas[i].titulo == this.titulo && this.metas[i].meta == this.descricao && this.formatDataInput(this.metas[i].data_inicio) == this.dataInicio && this.formatDataInput(this.metas[i].data_final) == this.dataFinal){ 
+          if (this.metas[i].titulo == this.titulo && this.metas[i].meta == this.descricao && this.formatDataInput(this.metas[i].data_inicio) == this.dataInicio && this.formatDataInput(this.metas[i].data_final) == this.dataFinal) {
             this.alert.info("Altere ao menos um dado antes de realizar a alteração", "Atenção")
           }
           break;
         }
       }
     }
-    this.rest.cadastrarAlterarMeta(this.titulo, this.limpaString(this.descricao), this.dataInicio, this.dataFinal, this.idMeta).subscribe((data: any) => {
-      if (data.status == 'success') {
-        this.alert.success('Alteração Salva com Sucesso');
+
+    if (this.titulo && this.descricao && this.dataInicio && this.dataFinal) {
+      this.salvando = true;
+      this.rest.cadastrarAlterarMeta(this.titulo, this.limpaString(this.descricao), this.dataInicio, this.dataFinal, this.idMeta).subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.alert.success('Alteração Salva com Sucesso');
+          console.log(data.data.length);
+          if (data.data.length > 0) {
+            console.log(data.data[0]);
+            this.metas.push(data.data[0]);
+          }
+        }
+        this.salvando = false;
+      });
+    }
+    else this.alert.info('Informe todos os campos antes de continuar', 'Atenção!');
+  }
+
+  apagarMeta() {
+    if (!this.idMeta) {
+      this.limparCampos();
+      return;
+    }
+    this.alert.question('Relmente deseja deletar a Meta?', 'SIM', 'NÃO').then((data: any) => {
+      if (data.isConfirmed) {
+        this.rest.apagarMeta(this.idMeta).subscribe((data: any) => {
+          console.log(data);
+          if (data.status == 'success') {
+            for (let i = 0; i < this.metas.length; i++) {
+              if (this.metas[i].id == this.idMeta) {
+                this.metas.splice(i, 1);
+              }
+            }
+            this.alert.success("Meta apagada com Sucesso!", "Sucesso!");
+          }
+          else { this.alert.erro("Erro ao apagar Meta! Tente novamente"); }
+        })
       }
+      else this.alert.info('Operação Cancelada', 'Cancelado!')
     });
   }
 
