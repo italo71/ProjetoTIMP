@@ -18,7 +18,6 @@ import { BackgroundColorComponent } from './components/background-color/backgrou
     PomodoroComponent,
     TasksComponent,
     BackgroundColorComponent
-
   ],
   imports: [
     CommonModule,
@@ -34,7 +33,6 @@ import { BackgroundColorComponent } from './components/background-color/backgrou
     PomodoroComponent,
     TasksComponent,
     BackgroundColorComponent
-
   ]
 })
 export class SharedModule { }

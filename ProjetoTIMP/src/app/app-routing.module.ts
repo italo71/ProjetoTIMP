@@ -10,6 +10,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { TarefasComponent } from './pages/menu/tarefas/tarefas.component';
 import { PerfilComponent } from './pages/menu/perfil/perfil.component';
 import { MetasComponent } from './pages/menu/metas/metas.component';
+import { AgendaComponent } from './pages/menu/agenda/agenda.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'metas',
     component:MetasComponent
+  },
+  {
+    path: 'agenda',
+    component:AgendaComponent
   },
 ];
 
