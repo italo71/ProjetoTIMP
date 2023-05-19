@@ -11,7 +11,7 @@ import { TarefasComponent } from './tarefas/tarefas.component';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { AgendaModule } from './agenda/agenda.module';
+import { AgendaComponent } from './agenda/agenda.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { AgendaModule } from './agenda/agenda.module';
     MetasComponent,
     PerfilComponent,
     TarefasComponent,
+    AgendaComponent,
 
   ],
   imports: [
@@ -27,7 +28,6 @@ import { AgendaModule } from './agenda/agenda.module';
     SharedModule,
     RouterModule,
     BrowserModule,
-    AgendaModule,
     FormsModule,
     AppRoutingModule,
   ],
