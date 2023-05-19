@@ -16,12 +16,10 @@ import { AgendaComponent } from './agenda/agenda.component';
 @NgModule({
   declarations: [
     MenuComponent,
-    
     MetasComponent,
     PerfilComponent,
     TarefasComponent,
     AgendaComponent,
-
   ],
   imports: [
     CommonModule,
@@ -33,7 +31,6 @@ import { AgendaComponent } from './agenda/agenda.component';
   ],
   exports: [
     MenuComponent,
-    
     MetasComponent,
     PerfilComponent,
     TarefasComponent
