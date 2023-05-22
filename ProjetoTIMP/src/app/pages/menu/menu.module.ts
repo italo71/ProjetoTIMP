@@ -11,29 +11,26 @@ import { TarefasComponent } from './tarefas/tarefas.component';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { AgendaModule } from './agenda/agenda.module';
+import { AgendaComponent } from './agenda/agenda.component';
 
 @NgModule({
   declarations: [
     MenuComponent,
-    
     MetasComponent,
     PerfilComponent,
     TarefasComponent,
-
+    AgendaComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
     BrowserModule,
-    AgendaModule,
     FormsModule,
     AppRoutingModule,
   ],
   exports: [
     MenuComponent,
-    
     MetasComponent,
     PerfilComponent,
     TarefasComponent
