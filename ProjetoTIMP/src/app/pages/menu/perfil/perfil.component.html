@@ -44,7 +44,11 @@
                                 </button>
                             </div>
                             <div class="col-2">
-                                <button class="btn btn-secondary btn-senha" (click)="digitaSenha()" [disabled]="!senhaAtual || senhaCorreta">Enviar</button>
+                                <button class="btn btn-secondary btn-senha" *ngIf="!confereSenhaChamado" (click)="digitaSenha()"
+                                    [disabled]="!senhaAtual || senhaCorreta">Enviar</button>
+                                <div class="spinner-border" role="status" *ngIf="confereSenhaChamado">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,8 +56,9 @@
                         <label class="form-label" for="nome">Nova Senha</label>
                         <div class="col-12 d-flex row">
                             <div class="col-10">
-                                <input [type]="senhaVisivel?'text':'password'" class="form-control" placeholder="Senha Nova" id="senhaN" [disabled]="!senhaCorreta"
-                                    [(ngModel)]="senhaNova1" (change)="conferrirSenhas()">
+                                <input [type]="senhaVisivel?'text':'password'" class="form-control" placeholder="Senha Nova" id="senhaN"
+                                    [disabled]="!senhaCorreta"
+                                    [(ngModel)]="senhaNova1">
                             </div>
                             <div class="col-2">
                                 <button class="btn" (click)="visibilidade()" *ngIf="senhaCorreta">
@@ -66,8 +71,9 @@
                         <label class="form-label" for="nome">Repita a senha</label>
                         <div class="col-12 d-flex row">
                             <div class="col-10">
-                                <input [type]="senhaVisivel2?'text':'password'" class="form-control" placeholder="Repita a senha" [disabled]="!senhaCorreta" id="senhaR"
-                                    [(ngModel)]="senhaNova2" (change)="conferrirSenhas()">
+                                <input [type]="senhaVisivel2?'text':'password'" class="form-control" placeholder="Repita a senha"
+                                    [disabled]="!senhaCorreta" id="senhaR"
+                                    [(ngModel)]="senhaNova2">
                             </div>
                             <div class="col-2">
                                 <button class="btn" (click)="visibilidade2()" *ngIf="senhaCorreta">
@@ -76,7 +82,15 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-danger mt-3" *ngIf="senhaConferem" (click)="atualizarSenha()">Alterar Senha</button>
+                    <span class="alert" *ngIf="(senhaNova1 && senhaNova2) && (senhaNova1 != senhaNova2)">Senhas não são iguais!</span>
+                    <button class="btn btn-danger mt-3" *ngIf="(senhaNova1 && senhaNova2) && (senhaNova1 == senhaNova2) && !alteraSenhaChamado"
+                        (click)="atualizarSenha()">Alterar
+                        Senha</button>
+                    <div class="spinner-border" role="status" style="margin-left: 5px; margin-top: 3px;"
+                        *ngIf="(senhaNova1 && senhaNova2) && (senhaNova1 == senhaNova2) && alteraSenhaChamado">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
                 </div>
             </div>
             <div class="col-6 d-flex row mt-3 mb-3">
@@ -96,8 +110,10 @@
                     </div>
                 </div>
             </div>
-
-            <button class="btn btn-success btn-salvar" (click)="atualizarDados()" [disabled]="resourceForm.untouched">Salvar</button>
+            <button *ngIf="!salvarDadosChamado" class="btn btn-success btn-salvar" (click)="atualizarDados()" [disabled]="resourceForm.untouched">Salvar</button>
+            <div class="spinner-border load-salvar" role="status" *ngIf="salvarDadosChamado">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
     </div>
 </div>

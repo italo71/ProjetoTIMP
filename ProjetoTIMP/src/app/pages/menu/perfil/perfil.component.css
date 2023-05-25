@@ -56,6 +56,11 @@
   bottom: 7px;
   width: 7%;
 }
+.load-salvar{
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
 
 .erro{
   font-size: 15px;
@@ -64,4 +69,9 @@
 
 .btn-senha{
   width: 100%;
+}
+
+.alert{
+  font-size: 15px;
+  color: red;
 }

@@ -26,6 +26,9 @@ export class PerfilComponent implements OnInit {
   senhaVisivel: boolean = false;
   senhaVisivel2: boolean = false;
   senhaConferem: boolean = false;
+  confereSenhaChamado:boolean = false;
+  alteraSenhaChamado:boolean = false;
+  salvarDadosChamado:boolean = false;
   constructor(
     private session: SessionService,
     private formBuilder: FormBuilder,
@@ -67,14 +70,17 @@ export class PerfilComponent implements OnInit {
   };
 
   digitaSenha() {
+    this.confereSenhaChamado = true;
     this.session.confereSenha(this.senhaAtual).subscribe((data: any) => {
       if (data.status == 'success') {
         if (data.message) {
           this.senhaCorreta = true;
           this.senhaVisivel0 = false;
         }
+        if(!this.senhaCorreta) this.alert.info('Senha incorreta', 'Nop', 1500);
       }
-      else this.alert.erro('Erro ao validar a senha')
+      else this.alert.erro('Erro ao validar a senha');
+      this.confereSenhaChamado = false;
     });
   }
 
@@ -90,21 +96,8 @@ export class PerfilComponent implements OnInit {
     this.senhaVisivel2 = !this.senhaVisivel2;
   }
 
-  conferrirSenhas() {
-    if (this.senhaNova1 != null && this.senhaNova2 != null) {
-      if (this.senhaNova1 === this.senhaNova2) {
-        this.senhaConferem = true;
-      }
-      else {
-        this.senhaConferem = false;
-      }
-    }
-    else {
-      this.senhaConferem = false;
-    }
-  }
-
   atualizarSenha() {
+    this.alteraSenhaChamado = true;
     this.session.atualizarSenha(this.senhaNova1).subscribe((data: any) => {
       console.log(data);
       if (data.status == 'success') {
@@ -119,12 +112,15 @@ export class PerfilComponent implements OnInit {
         this.alert.success('Senha alterada com sucesso!');
       }
       else this.alert.erro('Erro ao alterar a senha');
+      this.alteraSenhaChamado = false;
     });
   }
 
   atualizarDados() {
+    this.salvarDadosChamado = true;
     if (!(this.nome && this.email && this.dataNasc)) {
       this.alert.erro('Informe os dados obrigatórios', 'Erro');
+      this.salvarDadosChamado = false;
       return;
     }
     this.alert.question('Deseja realmente realizar esta alteração?', 'Sim', 'Cancelar').then(r => {
@@ -140,6 +136,7 @@ export class PerfilComponent implements OnInit {
         });
       }
       else this.alert.info('Ação Cancelada', 'Cancelado!');
+      this.salvarDadosChamado = false;
     });
   }
 }
