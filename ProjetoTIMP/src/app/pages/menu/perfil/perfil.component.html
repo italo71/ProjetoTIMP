@@ -23,9 +23,9 @@
                         <label class="form-label" for="nome">Data Nascimento</label>
                         <input type="date" class="form-control" formControlName="dataNasc" placeholder="Data Nascimento" id="dataNasc"
                             [(ngModel)]="dataNasc">
-                            <div class="erro" *ngIf="resourceForm.get('dataNasc')?.errors">
-                                Obrigatório
-                            </div>
+                        <div class="erro" *ngIf="resourceForm.get('dataNasc')?.errors">
+                            Obrigatório
+                        </div>
                     </div>
                     <hr class="mt-3 col-11" style="margin-left: 25px;">
                 </form>
@@ -33,20 +33,50 @@
                     <span style="border-bottom: 1px solid lightgray;"><strong>Redefinir Senha</strong></span>
                     <div class="col-12 d-flex f-col mt-2">
                         <label class="form-label" for="nome">Senha atual</label>
-                        <input type="text" class="form-control" placeholder="Senha Atual" id="senhaA"
-                            [(ngModel)]="senhaAtual"
-                            (change)="digitaSenha()">
+                        <div class="col-12 d-flex row">
+                            <div class="col-8">
+                                <input [type]="senhaVisivel0?'text':'password'" class="form-control" placeholder="Senha Atual" id="senhaA"
+                                    [(ngModel)]="senhaAtual" [disabled]="senhaCorreta">
+                            </div>
+                            <div class="col-2" *ngIf="!senhaCorreta">
+                                <button class="btn" (click)="visibilidade0()">
+                                    <span class="material-symbols-outlined">{{senhaVisivel0?'visibility':'visibility_off'}}</span>
+                                </button>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-secondary btn-senha" (click)="digitaSenha()" [disabled]="!senhaAtual || senhaCorreta">Enviar</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 d-flex f-col mt-1">
                         <label class="form-label" for="nome">Nova Senha</label>
-                        <input type="text" class="form-control" placeholder="Senha Nova" id="senhaN" [disabled]="!senhaCorreta"
-                            [(ngModel)]="senhaNova1">
+                        <div class="col-12 d-flex row">
+                            <div class="col-10">
+                                <input [type]="senhaVisivel?'text':'password'" class="form-control" placeholder="Senha Nova" id="senhaN" [disabled]="!senhaCorreta"
+                                    [(ngModel)]="senhaNova1" (change)="conferrirSenhas()">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn" (click)="visibilidade()" *ngIf="senhaCorreta">
+                                    <span class="material-symbols-outlined">{{senhaVisivel?'visibility':'visibility_off'}}</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 d-flex f-col mt-1">
                         <label class="form-label" for="nome">Repita a senha</label>
-                        <input type="text" class="form-control" placeholder="Repita a senha" [disabled]="!senhaCorreta" id="senhaR"
-                            [(ngModel)]="senhaNova2">
+                        <div class="col-12 d-flex row">
+                            <div class="col-10">
+                                <input [type]="senhaVisivel2?'text':'password'" class="form-control" placeholder="Repita a senha" [disabled]="!senhaCorreta" id="senhaR"
+                                    [(ngModel)]="senhaNova2" (change)="conferrirSenhas()">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn" (click)="visibilidade2()" *ngIf="senhaCorreta">
+                                    <span class="material-symbols-outlined">{{senhaVisivel2?'visibility':'visibility_off'}}</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    <button class="btn btn-danger mt-3" *ngIf="senhaConferem" (click)="atualizarSenha()">Alterar Senha</button>
                 </div>
             </div>
             <div class="col-6 d-flex row mt-3 mb-3">

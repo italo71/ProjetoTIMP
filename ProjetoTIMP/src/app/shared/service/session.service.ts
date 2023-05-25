@@ -45,6 +45,7 @@ export class SessionService {
     sessionStorage.clear()
     this.router.navigate(['/'])
   }
+
   criarSessao(dados: any) {
     let json = {
       "id": dados.id,
@@ -54,6 +55,24 @@ export class SessionService {
     }
     sessionStorage.setItem('session', JSON.stringify(json));
     return this.obterNomeUsu()
+  }
+
+  confereSenha(senha:any) {
+    let postData = {
+      "type":"senha",
+      "userID":this.obterIdUsuario(),
+      "senha": senha
+    }
+    return this.http.post(this.ws + 'user', postData);
+  }
+
+  atualizarSenha(senha:any){
+    let postData = {
+      "type":"pass",
+      "senha":senha,
+      "userID":this.obterIdUsuario()
+    };
+    return this.http.post(this.ws + 'user', postData);
   }
 
   atualizarDados(nome: any, email: any, dataNasc: any) {

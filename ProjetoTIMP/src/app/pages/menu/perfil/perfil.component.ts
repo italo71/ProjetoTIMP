@@ -21,6 +21,11 @@ export class PerfilComponent implements OnInit {
   senhaNova2: any = null;
   sidebarExpanded = true;
   resourceForm: FormGroup;
+  resetSenha: FormGroup;
+  senhaVisivel0: boolean = false;
+  senhaVisivel: boolean = false;
+  senhaVisivel2: boolean = false;
+  senhaConferem: boolean = false;
   constructor(
     private session: SessionService,
     private formBuilder: FormBuilder,
@@ -62,7 +67,59 @@ export class PerfilComponent implements OnInit {
   };
 
   digitaSenha() {
+    this.session.confereSenha(this.senhaAtual).subscribe((data: any) => {
+      if (data.status == 'success') {
+        if (data.message) {
+          this.senhaCorreta = true;
+          this.senhaVisivel0 = false;
+        }
+      }
+      else this.alert.erro('Erro ao validar a senha')
+    });
+  }
 
+  visibilidade0() {
+    this.senhaVisivel0 = !this.senhaVisivel0;
+  }
+
+  visibilidade() {
+    this.senhaVisivel = !this.senhaVisivel;
+  }
+
+  visibilidade2() {
+    this.senhaVisivel2 = !this.senhaVisivel2;
+  }
+
+  conferrirSenhas() {
+    if (this.senhaNova1 != null && this.senhaNova2 != null) {
+      if (this.senhaNova1 === this.senhaNova2) {
+        this.senhaConferem = true;
+      }
+      else {
+        this.senhaConferem = false;
+      }
+    }
+    else {
+      this.senhaConferem = false;
+    }
+  }
+
+  atualizarSenha() {
+    this.session.atualizarSenha(this.senhaNova1).subscribe((data: any) => {
+      console.log(data);
+      if (data.status == 'success') {
+        this.senhaCorreta = false;
+        this.senhaAtual = null;
+        this.senhaNova1 = null;
+        this.senhaNova2 = null;
+        this.senhaVisivel0 = false;
+        this.senhaVisivel = false;
+        this.senhaVisivel2 = false;
+        this.senhaConferem = false;
+        this.alert.success('Senha alterada com sucesso!');
+      }
+      else this.alert.erro('Erro ao alterar a senha');
+    });
   }
 
   atualizarDados() {
@@ -73,7 +130,6 @@ export class PerfilComponent implements OnInit {
     this.alert.question('Deseja realmente realizar esta alteração?', 'Sim', 'Cancelar').then(r => {
       if (r.isConfirmed) {
         this.session.atualizarDados(this.nome, this.email, this.dataNasc).subscribe((data: any) => {
-          console.log(data);
           if (data.status == "success") {
             this.session.criarSessao(data.data);
             this.alert.success('Dados atualizados com Sucesso!');
