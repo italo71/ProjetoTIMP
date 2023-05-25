@@ -75,3 +75,16 @@
   font-size: 15px;
   color: red;
 }
+
+
+
+input:enabled{
+  background-color: #4e4e4e6d;
+  border: none;
+  color: rgb(187, 187, 187);
+}
+
+input:disabled{
+  background-color: #2828286d;
+  border: none;
+}
