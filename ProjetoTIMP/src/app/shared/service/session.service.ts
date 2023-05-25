@@ -55,6 +55,18 @@ export class SessionService {
     sessionStorage.setItem('session', JSON.stringify(json));
     return this.obterNomeUsu()
   }
+
+  atualizarDados(nome: any, email: any, dataNasc: any) {
+    let postData = {
+      "type": "dados",
+      "nome": nome,
+      "email": email,
+      "dataNasc": dataNasc,
+      "userID": this.obterIdUsuario()
+    }
+    return this.http.post(this.ws + 'user', postData);
+  }
+
   sessaoAtiva() {
     let a: any = JSON.parse(this.obterSessao())
     if (a.id)

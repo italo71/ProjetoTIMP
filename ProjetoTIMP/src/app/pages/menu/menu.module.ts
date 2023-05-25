@@ -2,7 +2,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MenuComponent } from './menu.component';
 import { MetasComponent } from './metas/metas.component';
@@ -28,6 +28,7 @@ import { AgendaComponent } from './agenda/agenda.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     MenuComponent,
