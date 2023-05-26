@@ -19,13 +19,13 @@
 
 .meta{
     padding: 8px;
-    border: 1px black solid;
     border-radius: 8px;
     
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
+    width: 90%;
 }
 
 .btn_btn:hover {
@@ -41,10 +41,10 @@
 }
 
 .meta span{
-    border: 1px solid black;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     padding: 5px;
+    width: 90%;
 }
 
 label {
