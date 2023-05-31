@@ -4,18 +4,23 @@
     </div>
     <div class="d-flex justify-content-center">
         <div class="col-10">
-            <div class="card card-meta p-3">
+            <div class="card card-meta p-3" (mouseover)="apareceBtn()" (mouseout)="apareceBtn()">
                 <div class="row">
+                    <button class="btn btn-primary d-flex align-itens-center btn_btn" id="btn-refresh"
+                        (click)="refresh()" style="z-index: -1; position: absolute; width: 44px;"
+                        [style.margin-top]="(d_btn)?'-55px':'0px'" title="Recarregar Metas">
+                        <span style="font-size: 20px;" class="material-symbols-outlined">sync</span>
+                    </button>
                     
                     <div class="calendario-titulo">
                         <div>
-                            <button (click)="alterarMes(-1)">Anterior</button>
+                            <button class="btn-control" (click)="alterarMes(-1)">Anterior</button>
                         </div>
                         <div class="calendario-titulo-mes-ano">
-                            {{dataAtual | date : 'MMM yyyy'}}
+                            {{retornaAno(dataAtual)}}
                         </div>
                         <div>
-                            <button (click)="alterarMes(+1)">Próximo</button>
+                            <button class="btn-control" (click)="alterarMes(+1)">Próximo</button>
                         </div>
                     </div>
                     <div class="calendario-dias">
@@ -30,7 +35,36 @@
                             [class.calendario-quebrar-linha]="i % 7 === 0"
                             [class.calendario-dia-nao-faz-parte-mes-atual]="dataAtual.getMonth() !== dia.getMonth()">
                             {{dia | date : 'dd'}}
+                            <span class="material-symbols-outlined" *ngIf="temAgenda(dia)">fiber_manual_record</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-meta p-3 mt-3">
+                <div class="col-12 d-flex row card-dados">
+                    <div class="col-12 d-flex justify-content-end">
+                        <div class="div-btn-add">
+                            <button class="btn btn-success btn-add">
+                                <span class="material-symbols-outlined">add</span>
+                            </button>
+                        </div>
+                        <div class="div-btn-add">
+                            <button class="btn btn-danger btn-add">
+                                <span class="material-symbols-outlined">remove</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="col-3 d-flex card-adenda-dados" *ngFor="let a of listaAgendaDia">
+                        <div class="div-btn-add">
+                            <button class="btn btn-secondary btn-add" (click)="editarAgenda(a.id)">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </div>
+                        <span><strong>Titulo: </strong>{{a.titulo}}</span>
+                        <span><strong>Descrição: </strong>{{a.descricao}}</span>
+                        <span><strong>Data Inicio: </strong>{{formatarDataBRL(a.data_inicio)}}</span>
+                        <span><strong>Data Final: </strong>{{formatarDataBRL(a.data_final)}}</span>
                     </div>
                 </div>
             </div>
