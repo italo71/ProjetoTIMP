@@ -14,7 +14,7 @@
             <div class="d-flex justify-content-center mt-4 mb-4" id="login-column">
                 <div class="card" style="border-radius: 10px;width: 40rem; text-align: center;" id="login-box">
                     <div class="card-body">
-                        <h4 style="color: aliceblue;">Cadastrar</h4>
+                        <h4 style="color: aliceblue;">Cadastro do Usuário</h4>
                         <div style="padding: 10px; margin-left: 45px;">
                             <div class="mb-1">
                                 <label for="exampleFormControlInput1" class="form-label">Usuário</label>
@@ -60,13 +60,14 @@
                                 </div>
                             </div>
                             <div class="row d-flex row-column">
+                                
                                 <div class="col-5" style="margin-left: 20px;">
-                                    <button type="button" style="margin-right: 15px;" class="cadastrar"
-                                        (click)="registrar()">Cadastrar</button>
-                                </div>
-                                <div class="col-4">
                                     <a routerLink="/prelogin"><button type="button" class="cancelar"
                                             routerLink="/">Cancelar</button></a>
+                                </div>
+                                <div class="col-4" >
+                                    <button type="button" style="margin-right: 15px;" class="cadastrar"
+                                        (click)="registrar()">Cadastrar</button>
                                 </div>
                                 <div style="margin-left: -25px;">
                                     <div class="col-12 mt-4">
