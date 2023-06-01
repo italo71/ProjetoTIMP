@@ -15,6 +15,8 @@ export class AgendaComponent implements OnInit {
   d_btn: boolean = false;
   listaAgendaDia: Array<any> = [];
 
+  salvando: boolean = false;
+
   titulo: any = null;
   descricao: any = null;
   dataInicio: any = null;
@@ -29,8 +31,6 @@ export class AgendaComponent implements OnInit {
   ngOnInit() {
     this.construirCalendario();
     this.obterAgenda();
-    console.log(this.listaAgenda);
-    console.log(new Date(this.listaAgenda[0].data_inicio).toLocaleDateString());
   }
 
   obterAgenda() {
@@ -132,16 +132,13 @@ export class AgendaComponent implements OnInit {
   temAgenda(dia: any): boolean {
     let aux = new Date(dia);
     for (let i = 0; i < this.listaAgenda.length; i++) {
-      if (aux.toLocaleDateString() >= new Date(this.listaAgenda[0].data_inicio).toLocaleDateString()
-        && aux.toLocaleDateString() <= new Date(this.listaAgenda[0].data_inicio).toLocaleDateString()) {
-        console.log('oi');
+      if (aux.toLocaleDateString() >= new Date(this.listaAgenda[i].data_inicio).toLocaleDateString()
+        && aux.toLocaleDateString() <= new Date(this.listaAgenda[i].data_inicio).toLocaleDateString()) {
+        console.log(new Date(this.listaAgenda[i].data_inicio).toLocaleDateString());
         console.log(aux.toLocaleDateString());
-        console.log(new Date(this.listaAgenda[0].data_inicio).toLocaleDateString());
         return true;
       }
-      //console.log(new Date(this.listaAgenda[i]).toLocaleDateString());
     }
-    //console.log(aux.toLocaleDateString());
     return false;
   }
 
@@ -159,12 +156,42 @@ export class AgendaComponent implements OnInit {
 
   }
 
-  adicionarAgenda() {
+  abrirAddAgenda() {
+    this.titulo = null;
+    this.descricao = null;
+    this.dataInicio = null;
+    this.dataFinal = null;
+    $('#modal').removeClass('none');
+  }
 
+  fecharModal(){
+    this.titulo = null;
+    this.descricao = null;
+    this.dataInicio = null;
+    this.dataFinal = null;
+    $('#modal').addClass('none');
+  }
+
+  adicionarAgenda() {
+    this.salvando = true;
+    if (!this.titulo || this.dataInicio || this.dataFinal) {
+      this.rest.salvarAgenda(this.titulo, this.descricao, this.dataInicio, this.dataFinal).subscribe((data: any) => {
+        console.log(data);
+        if (data.status == 'success') {
+          this.listaAgenda.push(data.data);
+          this.rest.agendaStorage(this.listaAgenda);
+          this.construirCalendario();
+          this.fecharModal();
+          this.alert.success('Agenda salva com sucesso!');
+        }
+        this.salvando = false;
+      });
+    }
+    else this.alert.erro('Erro ao salvar agenda'); this.salvando = false;
   }
 
   abrirDia(dia: any) {
-    for (let i = 0; i < this.listaAgenda.length; i++){
+    for (let i = 0; i < this.listaAgenda.length; i++) {
     }
   }
 }
