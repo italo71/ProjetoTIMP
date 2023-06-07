@@ -52,6 +52,11 @@
     right: 5px;
 }
 
+.dia_clicado{
+    background-color: white;
+    color: black;
+}
+
 .card-adenda-dados {
     display: flex;
     flex-direction: column;

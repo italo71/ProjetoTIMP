@@ -30,8 +30,10 @@
                         </ng-container>
                         <div *ngFor="let dia of diasCalendario; let i = index"
                             class="calendario-dia"
+                            [id]="'dia'+i"
                             [class.calendario-quebrar-linha]="i % 7 === 0"
-                            [class.calendario-dia-nao-faz-parte-mes-atual]="dataAtual.getMonth() !== dia.getMonth()">
+                            [class.calendario-dia-nao-faz-parte-mes-atual]="dataAtual.getMonth() !== dia.getMonth()"
+                            (click)="abrirDia(dia, i)">
                             {{dia | date : 'dd'}}
                             <span class="material-symbols-outlined" *ngIf="temAgenda(dia)">fiber_manual_record</span>
                         </div>
@@ -46,11 +48,11 @@
                                 <span class="material-symbols-outlined">add</span>
                             </button>
                         </div>
-                        <div class="div-btn-add">
+                        <!-- <div class="div-btn-add">
                             <button class="btn btn-danger btn-add">
                                 <span class="material-symbols-outlined">remove</span>
                             </button>
-                        </div>
+                        </div> -->
 
                     </div>
                     <div class="col-3 d-flex card-adenda-dados" *ngFor="let a of listaAgendaDia">
@@ -69,6 +71,7 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="diaSelec">
 
 <div class="modal none" id="modal">
     <div class="modal-content">

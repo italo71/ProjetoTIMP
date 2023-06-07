@@ -39,15 +39,17 @@ export class AgendaService {
     return JSON.parse(json);
   }
 
-  salvarAgenda(titulo: any, descricao: any, dataInicial: any, dataFinal: any) {
+  salvarAgenda(titulo: any, descricao: any, dataInicial: any, dataFinal: any, id: any = null) {
     let postData = {
-      "method": "POST",
+      "method": (id != null) ? "PUT" : "POST",
       "userID": this.session.obterIdUsuario(),
       "titulo": titulo,
       "descricao": descricao,
       "dataInicio": dataInicial,
-      "dataFinal": dataFinal
+      "dataFinal": dataFinal,
+      "idAgenda": id
     }
+    console.log(postData);
     return this.http.post(this.ws + 'agenda', postData)
   }
 
