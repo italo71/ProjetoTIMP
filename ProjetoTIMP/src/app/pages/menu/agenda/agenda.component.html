@@ -30,6 +30,7 @@
                         </ng-container>
                         <div *ngFor="let dia of diasCalendario; let i = index"
                             class="calendario-dia"
+                            [class]="dia.toLocaleDateString() == hoje.toLocaleDateString()?'dia_clicado':''"
                             [id]="'dia'+i"
                             [class.calendario-quebrar-linha]="i % 7 === 0"
                             [class.calendario-dia-nao-faz-parte-mes-atual]="dataAtual.getMonth() !== dia.getMonth()"
@@ -62,7 +63,7 @@
                             </button>
                         </div>
                         <span><strong>Titulo: </strong>{{a.titulo}}</span>
-                        <span><strong>Descrição: </strong>{{a.descricao}}</span>
+                        <span><strong>Descrição: </strong>{{(a.descricao).substr(0,10)}}</span>
                         <span><strong>Data Inicio: </strong>{{formatarDataBRL(a.data_inicio)}}</span>
                         <span><strong>Data Final: </strong>{{formatarDataBRL(a.data_final)}}</span>
                     </div>

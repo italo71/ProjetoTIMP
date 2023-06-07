@@ -23,6 +23,8 @@ export class AgendaComponent implements OnInit {
   dataFinal: any = null;
   idAgenda: any = null;
 
+  hoje: any = new Date();
+
   constructor(
     private rest: AgendaService,
     private alert: AlertService
@@ -222,6 +224,7 @@ export class AgendaComponent implements OnInit {
     $('.dia_clicado').removeClass('dia_clicado');
     $('#dia' + id).addClass('dia_clicado');
     console.log(dia);
+    console.log(this.hoje);
     dia = new Date(dia).toLocaleDateString();
     let lista: Array<any> = [];
     for (let i = 0; i < this.listaAgenda.length; i++) {
