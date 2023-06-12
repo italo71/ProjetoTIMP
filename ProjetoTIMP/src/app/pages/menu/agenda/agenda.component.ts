@@ -173,10 +173,8 @@ export class AgendaComponent implements OnInit {
     $('#modal').removeClass('none');
     let dia: any = $('#diaSelec').val();
     if (dia != null && dia != '' && dia != undefined) {
-      dia = new Date(dia).toLocaleDateString();
-      console.log(dia);
-      console.log(dia.replace(/\//g, '-'));
-      $('#data_inicio').val(dia);
+      this.dataInicio = new Date(dia).toISOString().split('T')[0];
+      this.dataFinal = new Date(dia).toISOString().split('T')[0];
     }
   }
 
