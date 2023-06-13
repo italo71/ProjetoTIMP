@@ -45,16 +45,10 @@
     border: none;
 }
 
-#btn-refresh {
-    width: 45px;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-}
 
-.dia_clicado{
-    background-color: white;
-    color: black;
+
+.dia_clicado {
+    color: #ff5100;
 }
 
 .card-adenda-dados {
@@ -81,11 +75,11 @@ span {
 }
 
 .calendario-dias div {
-    border: 1px solid #ccc;
     font-size: 24px;
     padding: 20px;
     margin: 5px;
     border-radius: 8px;
+    background-color: #6b0779;
 }
 
 .calendario-dia-nao-faz-parte-mes-atual {
@@ -109,11 +103,11 @@ span {
     justify-content: center;
 }
 
-textarea{
+textarea {
     height: 100%;
 }
 
-.b-close{
+.b-close {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -125,10 +119,19 @@ textarea{
 .div-input-cad {
     display: flex;
     flex-direction: column;
+
 }
 
 .input-cad {
     border-radius: 8px;
+    border: none;
+}
+
+.input-cad:enabled {
+    border-radius: 8px;
+    border: none;
+    background-color: #cf8fdb;
+    color: white;
 }
 
 .modal {
@@ -147,7 +150,54 @@ textarea{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #202020;
+    background-color: rgb(150, 55, 170);
     color: white;
     width: 50%;
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+
+input[type="date"]::-webkit-inner-spin-button {
+    z-index: 1;
+}
+
+
+input[type="date"]::-webkit-clear-button {
+    z-index: 1;
+}
+
+.btnn-next{
+    background-color: #ff5100;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 70px;
+    transition: 0.5s;
+}
+
+.btnn-next:hover{
+    background-color: #711381;
+    border: none;
+    color: white;
+}
+
+.tem-ant{
+    size: 50%;
+    color: #1eff00b9;
 }

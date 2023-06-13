@@ -20,3 +20,23 @@ h4{
     color: white;
     font-size: 30px;
 }
+
+.btn-success{
+    background-color: rgb(30,255,0);
+    border: none;
+}
+
+.btn-success:enabled{
+    background-color: rgb(36, 207, 14);
+    border: none;
+}
+
+.btn-primary{
+    background-color: rgb(0,136,255);
+    border: none;
+}
+
+.btn-primary:enabled{
+    background-color: rgb(0,136,255);
+    border: none;
+}
