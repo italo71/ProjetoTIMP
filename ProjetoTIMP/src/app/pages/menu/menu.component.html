@@ -21,50 +21,45 @@
                                     <div class="d-flex justify-content-center mt-3 mb-3">
                                         <div class="col-10">
                                             <div class="card" style="background-color:#ffffff">
-                                                <span  class="d-flex justify-content-center mt-2 mb-2" style="color: black;">
-                                                    data <!-- {{data}} -->
+                                                <span class="d-flex justify-content-center mt-2 mb-2" style="color: black;">
+                                                    {{data}}
                                                 </span>
-
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <div class="row">
-                                    <div class="d-flex justify-content-center mt-3" style="gap: 15px;">
+                                    <div class="col-12 d-flex justify-content-center" *ngIf="listaExibir.length <= 0"
+                                        style="flex-direction: column;">
+                                        <span style="text-align: center;">Você não possui eventos! <br>
+                                            Vá para a <a routerLink="/agenda">Agenda</a> e cadastre um evento para ele aparecer aqui!</span> <br>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center mt-3" style="gap: 15px; flex-direction: row;"
+                                        *ngIf="listaExibir.length > 0">
                                         <div class="col-5">
                                             <div class="card" style="background-color:#1eff00; height: 200px; color: white;">
-                                                <span  class="d-flex justify-content-center mt-2 mb-2" >
-                                                    data <!-- {{data}} -->
+                                                <span class="mt-2 mb-2" style="text-align: center;">
+                                                    {{stringData(listaExibir[0].data_inicio)}} <br>
+                                                    {{listaExibir[0].titulo}} <br>
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="col-5">
                                             <div class="card" style="background-color:#1eff00; height: 200px; color: white;">
-                                                <span  class="d-flex justify-content-center mt-2 mb-2" >
-                                                    data <!-- {{data}} -->
+                                                <span class="mt-2 mb-2" style="text-align: center;">
+                                                    {{stringData(listaExibir[1].data_inicio)}} <br>
+                                                    {{listaExibir[1].titulo}} <br>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
-                    
                     <div class="row">
-                        
                         <div class="col-6">
-                            
-                            
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -76,7 +71,7 @@
                                 <div class="m-2">
                                     <div class="row">
                                         <span> Usuário: {{nomeUsuario}}</span>
-                                        
+
                                         <span id="dateNasc">
                                             Data de nascimento: {{dataNasc}}
                                         </span>
@@ -84,7 +79,7 @@
                                             Email: {{emailUsuario}}
                                         </span>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">

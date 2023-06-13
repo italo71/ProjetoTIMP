@@ -5,6 +5,12 @@
     transform: translateX(0) scale(1);
 }
 
+a{
+    color: rgb(30,255,0);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
 .card-relogio{
     background-color: rgb(0, 0, 0);
     height: 400px;
